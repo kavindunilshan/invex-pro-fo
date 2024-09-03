@@ -1,0 +1,10 @@
+.home-box {
+  position: absolute;
+  top: 10%;
+  left: 15%;
+  background-color: white;
+  width: 70%;
+  height: 80%;
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.2);
+}
+
