@@ -7,6 +7,7 @@ import { NavbarComponent } from './components/home/home-box/navbar/navbar.compon
 import { ActionButtonComponent } from './utils/action-button/action-button.component';
 import { HomeComponent } from './components/home/home.component';
 import { HomeBoxComponent } from './components/home/home-box/home-box.component';
+import {NgOptimizedImage} from "@angular/common";
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { HomeBoxComponent } from './components/home/home-box/home-box.component'
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgOptimizedImage
   ],
   providers: [],
   bootstrap: [AppComponent]
