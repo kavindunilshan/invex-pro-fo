@@ -1,0 +1,14 @@
+.action-button {
+  background: linear-gradient(45deg, #8e44ad, #3498db);
+  border: none;
+  color: #ff69b4; /* Pink text */
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+}
+
+.action-button:hover {
+  background: linear-gradient(45deg, #3498db, #8e44ad);
+}
