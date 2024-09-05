@@ -10,6 +10,15 @@
   flex-direction: column;
 }
 
+.home-box-logo {
+  position: absolute;
+  top: 45px;
+  left: 50px;
+  font-size: 16px;
+  color: #370186;
+  font-weight: bold;
+}
+
 .home-box-inner {
   display: flex;
   margin: 0 20px 20px 40px;

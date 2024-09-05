@@ -8,6 +8,7 @@ import { ActionButtonComponent } from './utils/action-button/action-button.compo
 import { HomeComponent } from './components/home/home.component';
 import { HomeBoxComponent } from './components/home/home-box/home-box.component';
 import {NgOptimizedImage} from "@angular/common";
+import { SideBarComponent } from './components/side-bar/side-bar.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import {NgOptimizedImage} from "@angular/common";
     NavbarComponent,
     ActionButtonComponent,
     HomeComponent,
-    HomeBoxComponent
+    HomeBoxComponent,
+    SideBarComponent
   ],
   imports: [
     BrowserModule,
