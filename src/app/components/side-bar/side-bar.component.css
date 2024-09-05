@@ -1,12 +1,11 @@
 .sidebar {
-  position: fixed;
   top: 0;
   left: 0;
   width: 200px;
-  height: 100%;
   background-color: #ffffff;
-  color: #000000;
-  border-right: 2px solid rgba(127, 127, 95, 0.29);
+  color: #242323;
+  border-right: 2px solid rgba(127, 127, 95, 0.24);
+  box-shadow: 1px 0 1px rgba(0, 0, 0, 0.08); /* Add shadow here */
   transition: transform 0.3s ease-in-out;
   transform: translateX(-100%);
 }
@@ -14,6 +13,7 @@
 .sidebar.expanded {
   transform: translateX(0);
 }
+
 
 .toggle-btn {
   position: absolute;
@@ -45,34 +45,39 @@
 }
 
 .topic-title {
-  font-size: 16px;
-  font-weight: 500;
-  color: #777777;
+  font-size: 13px;
+  font-weight: 400;
+  color: #5d5d5d;
 }
 
 .topic-items {
   list-style-type: none;
+  margin-left: 15px;
   padding: 0;
 }
 
 .topic-item {
   display: flex;
   align-items: center;
-  padding: 10px 0;
+  border-radius: 5px;
+  padding: 5px 0;
+  margin: 2px 0;
   cursor: pointer;
 }
 
 .topic-item:hover {
-  background-color: #555;
+  background-color: rgba(175, 175, 175, 0.09);
 }
 
 .item-icon {
-  width: 24px;
-  height: 24px;
-  background-color: #777;
-  margin-right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  color: #4a03b2;
+  margin-right: 4px;
 }
 
 .item-name {
-  font-size: 16px;
+  font-size: 14px;
 }
