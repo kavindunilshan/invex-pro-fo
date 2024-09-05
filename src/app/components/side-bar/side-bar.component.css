@@ -8,12 +8,10 @@
   box-shadow: 1px 0 1px rgba(0, 0, 0, 0.08); /* Add shadow here */
   transition: transform 0.3s ease-in-out;
   transform: translateX(-100%);
-  display: none;
 }
 
 .sidebar.expanded {
   transform: translateX(0);
-  display: block;
 }
 
 
