@@ -1,18 +1,36 @@
 .sidebar {
-  position: fixed;
   top: 0;
   left: 0;
   width: 200px;
-  height: 100%;
   background-color: #ffffff;
-  color: #000000;
-  border-right: 2px solid rgba(127, 127, 95, 0.29);
+  color: #242323;
+  border-right: 2px solid rgba(127, 127, 95, 0.24);
+  box-shadow: 1px 0 1px rgba(0, 0, 0, 0.08); /* Add shadow here */
   transition: transform 0.3s ease-in-out;
-  // transform: translateX(-100%);
+  transform: translateX(-100%);
+  display: none;
 }
 
 .sidebar.expanded {
-  // transform: translateX(0);
+  transform: translateX(0);
+  display: block;
+}
+
+
+.toggle-btn {
+  position: absolute;
+  top: 12px;
+  left: 15px;
+  background-color: #ffffff;
+  border: none;
+  color: #2b2a2a;
+  cursor: pointer;
+  font-size: 18px;
+  padding: 5px 10px;
+}
+
+.toggle-btn.red {
+  color: #f87373;
 }
 
 .sidebar-header {
@@ -33,34 +51,39 @@
 }
 
 .topic-title {
-  font-size: 16px;
-  font-weight: 500;
-  color: #777777;
+  font-size: 13px;
+  font-weight: 400;
+  color: #5d5d5d;
 }
 
 .topic-items {
   list-style-type: none;
+  margin-left: 15px;
   padding: 0;
 }
 
 .topic-item {
   display: flex;
   align-items: center;
-  padding: 10px 0;
+  border-radius: 5px;
+  padding: 5px 0;
+  margin: 2px 0;
   cursor: pointer;
 }
 
 .topic-item:hover {
-  background-color: #555;
+  background-color: rgba(175, 175, 175, 0.09);
 }
 
 .item-icon {
-  width: 24px;
-  height: 24px;
-  background-color: #777;
-  margin-right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  color: #370186;
+  margin-right: 4px;
 }
 
 .item-name {
-  font-size: 16px;
+  font-size: 14px;
 }

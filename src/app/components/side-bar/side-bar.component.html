@@ -1,34 +1,106 @@
-<div class="sidebar">
+<button (click)="toggleSidebar()" class="toggle-btn">☰</button>
+<div class="sidebar" [class.expanded]="isExpanded">
   <div class="sidebar-header">
+    <button (click)="toggleSidebar()" class="toggle-btn" [class.red]="isExpanded">✕</button>
     InvexPro
   </div>
   <div class="sidebar-menu">
     <div class="sidebar-topic">
-      <h3 class="topic-title">Topic 1</h3>
+      <h3 class="topic-title">Menu</h3>
       <ul class="topic-items">
         <li class="topic-item">
-          <i class="item-icon"></i>
-          <span class="item-name">Item 1</span>
+          <mat-icon class="item-icon">dashboard</mat-icon>
+          <span class="item-name">Dashboard</span>
         </li>
         <li class="topic-item">
-          <i class="item-icon"></i>
-          <span class="item-name">Item 2</span>
+          <mat-icon class="item-icon">notifications</mat-icon>
+          <span class="item-name">Notifications</span>
         </li>
       </ul>
     </div>
+
     <div class="sidebar-topic">
-      <h3 class="topic-title">Topic 2</h3>
+      <h3 class="topic-title">Management</h3>
       <ul class="topic-items">
         <li class="topic-item">
-          <i class="item-icon"></i>
-          <span class="item-name">Item 3</span>
+          <mat-icon class="item-icon">assignment</mat-icon>
+          <span class="item-name">Products</span>
         </li>
         <li class="topic-item">
-          <i class="item-icon"></i>
-          <span class="item-name">Item 4</span>
+          <mat-icon class="item-icon">ballot</mat-icon>
+          <span class="item-name">Categories</span>
+        </li>
+        <li class="topic-item">
+          <mat-icon class="item-icon">airport_shuttle</mat-icon>
+          <span class="item-name">Suppliers</span>
+        </li>
+        <li class="topic-item">
+          <mat-icon class="item-icon">supervised_user_circle</mat-icon>
+          <span class="item-name">Customers</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="sidebar-topic">
+      <h3 class="topic-title">Orders</h3>
+      <ul class="topic-items">
+        <li class="topic-item">
+          <mat-icon class="item-icon">style</mat-icon>
+          <span class="item-name">Orders</span>
+        </li>
+        <li class="topic-item">
+          <mat-icon class="item-icon">account_balance_wallet</mat-icon>
+          <span class="item-name">Purchases</span>
+        </li>
+        <li class="topic-item">
+          <mat-icon class="item-icon">directions_boat</mat-icon>
+          <span class="item-name">Shipments</span>
+        </li>
+        <li class="topic-item">
+          <mat-icon class="item-icon">assignment_return</mat-icon>
+          <span class="item-name">Returns</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="sidebar-topic">
+      <h3 class="topic-title">Service</h3>
+      <ul class="topic-items">
+        <li class="topic-item">
+          <mat-icon class="item-icon">assessment</mat-icon>
+          <span class="item-name">Reports</span>
+        </li>
+        <li class="topic-item">
+          <mat-icon class="item-icon">stars</mat-icon>
+          <span class="item-name">Audit</span>
+        </li>
+        <li class="topic-item">
+          <mat-icon class="item-icon">trending_up</mat-icon>
+          <span class="item-name">Performance</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="sidebar-topic">
+      <h3 class="topic-title">Settings</h3>
+      <ul class="topic-items">
+        <li class="topic-item">
+          <mat-icon class="item-icon">assignment_ind</mat-icon>
+          <span class="item-name">Users</span>
+        </li>
+        <li class="topic-item">
+          <mat-icon class="item-icon">palette</mat-icon>
+          <span class="item-name">Preferences</span>
+        </li>
+        <li class="topic-item">
+          <mat-icon class="item-icon">contact_support</mat-icon>
+          <span class="item-name">Support</span>
+        </li>
+        <li class="topic-item">
+          <mat-icon class="item-icon">logout</mat-icon>
+          <span class="item-name">Logout</span>
         </li>
       </ul>
     </div>
   </div>
 </div>
-

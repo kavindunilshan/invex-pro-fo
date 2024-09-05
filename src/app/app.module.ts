@@ -9,6 +9,7 @@ import { HomeComponent } from './components/home/home.component';
 import { HomeBoxComponent } from './components/home/home-box/home-box.component';
 import {NgOptimizedImage} from "@angular/common";
 import { SideBarComponent } from './components/side-bar/side-bar.component';
+import {MatIconModule} from "@angular/material/icon";
 
 @NgModule({
   declarations: [
@@ -20,9 +21,10 @@ import { SideBarComponent } from './components/side-bar/side-bar.component';
     SideBarComponent
   ],
   imports: [
+    MatIconModule,
     BrowserModule,
     AppRoutingModule,
-    NgOptimizedImage
+    NgOptimizedImage,
   ],
   providers: [],
   bootstrap: [AppComponent]

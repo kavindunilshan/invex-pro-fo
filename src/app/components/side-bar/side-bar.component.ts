@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrl: './side-bar.component.css'
 })
 export class SideBarComponent {
+  isExpanded = true;
+
+  toggleSidebar() {
+    this.isExpanded = !this.isExpanded;
+  }
 
 }
