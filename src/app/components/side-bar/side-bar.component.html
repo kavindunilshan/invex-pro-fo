@@ -1,34 +1,106 @@
-<div class="sidebar">
+<button (click)="toggleSidebar()" class="toggle-btn">☰</button>
+<div class="sidebar" [class.expanded]="isExpanded">
   <div class="sidebar-header">
+    <button (click)="toggleSidebar()" class="toggle-btn">✕</button>
     InvexPro
   </div>
   <div class="sidebar-menu">
     <div class="sidebar-topic">
-      <h3 class="topic-title">Topic 1</h3>
+      <h3 class="topic-title">Menu</h3>
       <ul class="topic-items">
         <li class="topic-item">
           <i class="item-icon"></i>
-          <span class="item-name">Item 1</span>
+          <span class="item-name">Dashboard</span>
         </li>
         <li class="topic-item">
           <i class="item-icon"></i>
-          <span class="item-name">Item 2</span>
+          <span class="item-name">Notifications</span>
         </li>
       </ul>
     </div>
+
     <div class="sidebar-topic">
-      <h3 class="topic-title">Topic 2</h3>
+      <h3 class="topic-title">Management</h3>
       <ul class="topic-items">
         <li class="topic-item">
           <i class="item-icon"></i>
-          <span class="item-name">Item 3</span>
+          <span class="item-name">Products</span>
         </li>
         <li class="topic-item">
           <i class="item-icon"></i>
-          <span class="item-name">Item 4</span>
+          <span class="item-name">Categories</span>
+        </li>
+        <li class="topic-item">
+          <i class="item-icon"></i>
+          <span class="item-name">Suppliers</span>
+        </li>
+        <li class="topic-item">
+          <i class="item-icon"></i>
+          <span class="item-name">Customers</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="sidebar-topic">
+      <h3 class="topic-title">Orders</h3>
+      <ul class="topic-items">
+        <li class="topic-item">
+          <i class="item-icon"></i>
+          <span class="item-name">Orders</span>
+        </li>
+        <li class="topic-item">
+          <i class="item-icon"></i>
+          <span class="item-name">Purchases</span>
+        </li>
+        <li class="topic-item">
+          <i class="item-icon"></i>
+          <span class="item-name">Shipments</span>
+        </li>
+        <li class="topic-item">
+          <i class="item-icon"></i>
+          <span class="item-name">Returns</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="sidebar-topic">
+      <h3 class="topic-title">Reports</h3>
+      <ul class="topic-items">
+        <li class="topic-item">
+          <i class="item-icon"></i>
+          <span class="item-name">Sales</span>
+        </li>
+        <li class="topic-item">
+          <i class="item-icon"></i>
+          <span class="item-name">Inventory</span>
+        </li>
+        <li class="topic-item">
+          <i class="item-icon"></i>
+          <span class="item-name">Performance</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="sidebar-topic">
+      <h3 class="topic-title">Settings</h3>
+      <ul class="topic-items">
+        <li class="topic-item">
+          <i class="item-icon"></i>
+          <span class="item-name">Users</span>
+        </li>
+        <li class="topic-item">
+          <i class="item-icon"></i>
+          <span class="item-name">Roles</span>
+        </li>
+        <li class="topic-item">
+          <i class="item-icon"></i>
+          <span class="item-name">Preferences</span>
+        </li>
+        <li class="topic-item">
+          <i class="item-icon"></i>
+          <span class="item-name">Support</span>
         </li>
       </ul>
     </div>
   </div>
 </div>
-
