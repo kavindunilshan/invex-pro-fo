@@ -8,9 +8,10 @@ import { ActionButtonComponent } from './utils/action-button/action-button.compo
 import { HomeComponent } from './components/home/home.component';
 import { HomeBoxComponent } from './components/home/home-box/home-box.component';
 import {NgOptimizedImage} from "@angular/common";
-import { SideBarComponent } from './components/side-bar/side-bar.component';
+import { SideBarComponent } from './components/action-center/side-bar/side-bar.component';
 import {MatIconModule} from "@angular/material/icon";
-import { TopBarComponent } from './components/top-bar/top-bar.component';
+import { TopBarComponent } from './components/action-center/top-bar/top-bar.component';
+import { ActionCenterComponent } from './components/action-center/action-center.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { TopBarComponent } from './components/top-bar/top-bar.component';
     HomeComponent,
     HomeBoxComponent,
     SideBarComponent,
-    TopBarComponent
+    TopBarComponent,
+    ActionCenterComponent
   ],
   imports: [
     MatIconModule,
