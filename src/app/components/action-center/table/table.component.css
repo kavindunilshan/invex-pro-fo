@@ -8,7 +8,7 @@ table {
 }
 
 th {
-  background-color: #4a03b2;
+  background-color: #33027b;
   color: white;
   padding: 15px;
   text-align: left;
@@ -42,9 +42,9 @@ td:hover {
 }
 
 th:first-child, td:first-child {
-  border-left: 8px solid #4a03b2;
+  border-left: 4px solid #4a03b2;
 }
 
 th:last-child, td:last-child {
-  border-right: 8px solid #4a03b2;
+  border-right: 4px solid #4a03b2;
 }
