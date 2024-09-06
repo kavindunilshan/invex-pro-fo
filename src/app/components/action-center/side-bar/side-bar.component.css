@@ -3,7 +3,7 @@
   background-color: #ffffff;
   color: #242323;
   border-right: 2px solid rgba(127, 127, 95, 0.24);
-  box-shadow: 1px 0 1px rgba(0, 0, 0, 0.08); /* Add shadow here */
+  box-shadow: 1px 0 4px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease-in-out;
   transform: translateX(-100%);
 }

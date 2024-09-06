@@ -1,2 +1,4 @@
-<app-top-bar/>
-<app-side-bar/>
+<div class="action-center">
+  <app-top-bar (toggleSidebar)="toggle($event)"/>
+  <app-side-bar [isExpanded]="isSidebarExpanded"/>
+</div>
