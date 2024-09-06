@@ -10,6 +10,7 @@ import { HomeBoxComponent } from './components/home/home-box/home-box.component'
 import {NgOptimizedImage} from "@angular/common";
 import { SideBarComponent } from './components/side-bar/side-bar.component';
 import {MatIconModule} from "@angular/material/icon";
+import { TopBarComponent } from './components/top-bar/top-bar.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import {MatIconModule} from "@angular/material/icon";
     ActionButtonComponent,
     HomeComponent,
     HomeBoxComponent,
-    SideBarComponent
+    SideBarComponent,
+    TopBarComponent
   ],
   imports: [
     MatIconModule,
