@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
 
 @Component({
   selector: 'app-side-bar',
@@ -6,10 +6,6 @@ import { Component } from '@angular/core';
   styleUrl: './side-bar.component.css'
 })
 export class SideBarComponent {
-  isExpanded = true;
-
-  toggleSidebar() {
-    this.isExpanded = !this.isExpanded;
-  }
+  @Input() isExpanded = false;
 
 }

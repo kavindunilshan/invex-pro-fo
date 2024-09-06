@@ -1,36 +1,15 @@
 .sidebar {
-  top: 0;
-  left: 0;
   width: 200px;
   background-color: #ffffff;
   color: #242323;
   border-right: 2px solid rgba(127, 127, 95, 0.24);
-  box-shadow: 1px 0 1px rgba(0, 0, 0, 0.08); /* Add shadow here */
+  box-shadow: 1px 0 4px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease-in-out;
   transform: translateX(-100%);
-  display: none;
 }
 
 .sidebar.expanded {
   transform: translateX(0);
-  display: block;
-}
-
-
-.toggle-btn {
-  position: absolute;
-  top: 12px;
-  left: 15px;
-  background-color: #ffffff;
-  border: none;
-  color: #2b2a2a;
-  cursor: pointer;
-  font-size: 18px;
-  padding: 5px 10px;
-}
-
-.toggle-btn.red {
-  color: #f87373;
 }
 
 .sidebar-header {
