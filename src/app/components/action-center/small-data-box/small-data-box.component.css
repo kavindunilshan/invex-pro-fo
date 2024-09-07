@@ -1,0 +1,65 @@
+.data-box {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 20px;
+  width: 220px;
+  height: auto;
+  text-align: center;
+  display: inline-block;
+  transition: transform 0.2s ease-in-out;
+}
+
+.data-icon {
+  font-size: 30px;
+  color: #4a03b2;
+  margin-bottom: 10px;
+  line-height: 1;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: visible;
+}
+
+.data-box h3 {
+  font-size: 16px;
+  color: #4a03b2;
+  margin-bottom: 5px;
+}
+
+.data-subtitle {
+  font-size: 12px;
+  color: #9c9595;
+  margin-bottom: 15px;
+}
+
+.data-value {
+  font-size: 24px;
+  font-weight: bold;
+  color: #323131;
+}
+
+.trend-indicator {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.trend-up {
+  color: green;
+}
+
+.trend-down {
+  color: red;
+}
+
+.positive {
+  color: green;
+}
+
+.negative {
+  color: red;
+}

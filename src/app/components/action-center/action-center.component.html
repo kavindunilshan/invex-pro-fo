@@ -1,4 +1,31 @@
 <div class="action-center">
   <app-top-bar (toggleSidebar)="toggle($event)"/>
   <app-side-bar [isExpanded]="isSidebarExpanded"/>
+
+  <div class="content">
+    <app-small-data-box
+      icon="account_balance"
+      title="Total Balance"
+      subtitle="Total balance in your account"
+      value="Rs. 1,000,000"
+      [isPositiveTrend]="true"
+      trendValue="5"
+    ></app-small-data-box>
+    <app-small-data-box
+      icon="trending_up"
+      title="Total Income"
+      subtitle="Total income in this month"
+      value="Rs. 100,000"
+      [isPositiveTrend]="true"
+      trendValue="10"
+    ></app-small-data-box>
+    <app-small-data-box
+      icon="trending_down"
+      title="Total Expense"
+      subtitle="Total expense in this month"
+      value="Rs. 50,000"
+      [isPositiveTrend]="false"
+      trendValue="5"
+    ></app-small-data-box>
+</div>
 </div>
