@@ -1,0 +1,13 @@
+<div class="data-box">
+  <mat-icon class="data-icon">{{ icon }}</mat-icon>
+  <h3>{{ title }}</h3>
+  <p class="data-subtitle">{{ subtitle }}</p>
+  <span class="data-value">{{ value }}</span>
+  <div class="trend-indicator">
+    <mat-icon *ngIf="isPositiveTrend" class="trend-up">arrow_upward</mat-icon>
+    <mat-icon *ngIf="!isPositiveTrend" class="trend-down">arrow_downward</mat-icon>
+    <span [ngClass]="{'positive': isPositiveTrend, 'negative': !isPositiveTrend}">
+      {{ trendValue }}%
+    </span>
+  </div>
+</div>

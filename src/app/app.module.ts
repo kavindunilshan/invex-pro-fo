@@ -13,6 +13,7 @@ import {MatIconModule} from "@angular/material/icon";
 import { TopBarComponent } from './components/action-center/top-bar/top-bar.component';
 import { ActionCenterComponent } from './components/action-center/action-center.component';
 import { TableComponent } from './components/action-center/table/table.component';
+import { SmallDataBoxComponent } from './components/action-center/small-data-box/small-data-box.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { TableComponent } from './components/action-center/table/table.component
     SideBarComponent,
     TopBarComponent,
     ActionCenterComponent,
-    TableComponent
+    TableComponent,
+    SmallDataBoxComponent
   ],
   imports: [
     MatIconModule,
