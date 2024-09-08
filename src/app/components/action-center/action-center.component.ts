@@ -9,7 +9,6 @@ export class ActionCenterComponent {
   isSidebarExpanded = true;
 
   toggle(isExpanded: boolean) {
-    console.log("Calling here", isExpanded);
     this.isSidebarExpanded = isExpanded;
   }
 

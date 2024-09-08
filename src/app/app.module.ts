@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -7,9 +8,9 @@ import { NavbarComponent } from './components/home/home-box/navbar/navbar.compon
 import { ActionButtonComponent } from './utils/action-button/action-button.component';
 import { HomeComponent } from './components/home/home.component';
 import { HomeBoxComponent } from './components/home/home-box/home-box.component';
-import {NgOptimizedImage} from "@angular/common";
+import { NgOptimizedImage } from "@angular/common";
 import { SideBarComponent } from './components/action-center/general/side-bar/side-bar.component';
-import {MatIconModule} from "@angular/material/icon";
+import { MatIconModule } from "@angular/material/icon";
 import { TopBarComponent } from './components/action-center/general/top-bar/top-bar.component';
 import { ActionCenterComponent } from './components/action-center/action-center.component';
 import { TableComponent } from './components/action-center/general/table/table.component';
@@ -17,11 +18,13 @@ import { SmallDataBoxComponent } from './components/action-center/general/small-
 import { DashboardComponent } from './components/action-center/dashboard/dashboard.component';
 import { DashboardHeadComponent } from './components/action-center/dashboard/dashboard-head/dashboard-head.component';
 import { DynamicFormDialogComponent } from './components/action-center/general/dynamic-form-dialog/dynamic-form-dialog.component';
-import {ReactiveFormsModule} from "@angular/forms";
-import {MatFormField} from "@angular/material/form-field";
-import {MatDialogActions, MatDialogTitle} from "@angular/material/dialog";
-import {MatButton} from "@angular/material/button";
-import {MatInput} from "@angular/material/input";
+import { ReactiveFormsModule } from "@angular/forms";
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+import { ProductComponent } from './components/action-center/management/product/product.component';
+import { ProductFormComponent } from './components/action-center/management/product/product-form/product-form.component';
 
 @NgModule({
   declarations: [
@@ -38,18 +41,20 @@ import {MatInput} from "@angular/material/input";
     DashboardComponent,
     DashboardHeadComponent,
     DynamicFormDialogComponent,
+    ProductComponent,
+    ProductFormComponent,
   ],
   imports: [
     MatIconModule,
     BrowserModule,
+    BrowserAnimationsModule,  // Required for Angular Material
     AppRoutingModule,
     NgOptimizedImage,
     ReactiveFormsModule,
-    MatFormField,
-    MatDialogActions,
-    MatButton,
-    MatInput,
-    MatDialogTitle,
+    MatFormFieldModule,
+    MatDialogModule,
+    MatButtonModule,
+    MatInputModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
