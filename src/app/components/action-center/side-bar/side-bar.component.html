@@ -1,101 +1,112 @@
 <div class="sidebar" [class.expanded]="isExpanded">
   <div class="sidebar-menu">
+
+    <!-- Menu Section -->
     <div class="sidebar-topic">
       <h3 class="topic-title">Menu</h3>
       <ul class="topic-items">
-        <li class="topic-item">
+        <li class="topic-item" routerLink="/home" routerLinkActive="active">
+          <mat-icon class="item-icon">home</mat-icon>
+          <span class="item-name">Home</span>
+        </li>
+        <li class="topic-item" routerLink="/action-center/dashboard">
           <mat-icon class="item-icon">dashboard</mat-icon>
           <span class="item-name">Dashboard</span>
         </li>
-        <li class="topic-item">
+        <li class="topic-item" routerLink="/action-center/notifications">
           <mat-icon class="item-icon">notifications</mat-icon>
           <span class="item-name">Notifications</span>
         </li>
       </ul>
     </div>
 
+    <!-- Management Section -->
     <div class="sidebar-topic">
       <h3 class="topic-title">Management</h3>
       <ul class="topic-items">
-        <li class="topic-item">
+        <li class="topic-item" routerLink="/action-center/products">
           <mat-icon class="item-icon">assignment</mat-icon>
           <span class="item-name">Products</span>
         </li>
-        <li class="topic-item">
+        <li class="topic-item" routerLink="/action-center/categories">
           <mat-icon class="item-icon">ballot</mat-icon>
           <span class="item-name">Categories</span>
         </li>
-        <li class="topic-item">
+        <li class="topic-item" routerLink="/action-center/suppliers">
           <mat-icon class="item-icon">airport_shuttle</mat-icon>
           <span class="item-name">Suppliers</span>
         </li>
-        <li class="topic-item">
+        <li class="topic-item" routerLink="/action-center/customers">
           <mat-icon class="item-icon">supervised_user_circle</mat-icon>
           <span class="item-name">Customers</span>
         </li>
       </ul>
     </div>
 
+    <!-- Orders Section -->
     <div class="sidebar-topic">
       <h3 class="topic-title">Orders</h3>
       <ul class="topic-items">
-        <li class="topic-item">
+        <li class="topic-item" routerLink="/action-center/orders">
           <mat-icon class="item-icon">style</mat-icon>
           <span class="item-name">Orders</span>
         </li>
-        <li class="topic-item">
+        <li class="topic-item" routerLink="/action-center/purchases">
           <mat-icon class="item-icon">account_balance_wallet</mat-icon>
           <span class="item-name">Purchases</span>
         </li>
-        <li class="topic-item">
+        <li class="topic-item" routerLink="/action-center/shipments">
           <mat-icon class="item-icon">directions_boat</mat-icon>
           <span class="item-name">Shipments</span>
         </li>
-        <li class="topic-item">
+        <li class="topic-item" routerLink="/action-center/returns">
           <mat-icon class="item-icon">assignment_return</mat-icon>
           <span class="item-name">Returns</span>
         </li>
       </ul>
     </div>
 
+    <!-- Service Section -->
     <div class="sidebar-topic">
       <h3 class="topic-title">Service</h3>
       <ul class="topic-items">
-        <li class="topic-item">
+        <li class="topic-item" routerLink="/action-center/reports">
           <mat-icon class="item-icon">assessment</mat-icon>
           <span class="item-name">Reports</span>
         </li>
-        <li class="topic-item">
+        <li class="topic-item" routerLink="/action-center/audit">
           <mat-icon class="item-icon">stars</mat-icon>
           <span class="item-name">Audit</span>
         </li>
-        <li class="topic-item">
+        <li class="topic-item" routerLink="/action-center/performance">
           <mat-icon class="item-icon">trending_up</mat-icon>
           <span class="item-name">Performance</span>
         </li>
       </ul>
     </div>
 
+    <!-- Settings Section -->
     <div class="sidebar-topic">
       <h3 class="topic-title">Settings</h3>
       <ul class="topic-items">
-        <li class="topic-item">
+        <li class="topic-item" routerLink="/action-center/users">
           <mat-icon class="item-icon">assignment_ind</mat-icon>
           <span class="item-name">Users</span>
         </li>
-        <li class="topic-item">
+        <li class="topic-item" routerLink="/action-center/preferences">
           <mat-icon class="item-icon">palette</mat-icon>
           <span class="item-name">Preferences</span>
         </li>
-        <li class="topic-item">
+        <li class="topic-item" routerLink="/action-center/support">
           <mat-icon class="item-icon">contact_support</mat-icon>
           <span class="item-name">Support</span>
         </li>
-        <li class="topic-item">
+        <li class="topic-item" routerLink="/action-center/logout">
           <mat-icon class="item-icon">logout</mat-icon>
           <span class="item-name">Logout</span>
         </li>
       </ul>
     </div>
+
   </div>
 </div>
