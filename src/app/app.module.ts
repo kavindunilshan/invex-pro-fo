@@ -16,7 +16,7 @@ import { TableComponent } from './components/action-center/general/table/table.c
 import { SmallDataBoxComponent } from './components/action-center/general/small-data-box/small-data-box.component';
 import { DashboardComponent } from './components/action-center/dashboard/dashboard.component';
 import { DashboardHeadComponent } from './components/action-center/dashboard/dashboard-head/dashboard-head.component';
-import { DynamicFormComponent } from './components/action-center/general/dynamic-form/dynamic-form.component';
+import { DynamicFormDialogComponent } from './components/action-center/general/dynamic-form-dialog/dynamic-form-dialog.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +32,7 @@ import { DynamicFormComponent } from './components/action-center/general/dynamic
     SmallDataBoxComponent,
     DashboardComponent,
     DashboardHeadComponent,
-    DynamicFormComponent
+    DynamicFormDialogComponent,
   ],
   imports: [
     MatIconModule,
