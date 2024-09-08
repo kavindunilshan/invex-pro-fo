@@ -1,1 +1,19 @@
-<p>dynamic-form-dialog works!</p>
+<h2 mat-dialog-title>{{ data.title }}</h2>
+
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div *ngFor="let field of data.formFields" class="form-field">
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>{{ field.label }}</mat-label>
+      <input matInput [type]="field.type" [formControlName]="field.name" />
+      <mat-error *ngIf="form.get(field.name)?.hasError('required')">
+        {{ field.label }} is required
+      </mat-error>
+    </mat-form-field>
+  </div>
+
+  <div mat-dialog-actions align="end">
+    <button mat-button (click)="onCancel()">Cancel</button>
+    <button mat-raised-button color="primary" type="submit" [disabled]="!form.valid">Submit</button>
+  </div>
+</form>
+

@@ -17,6 +17,11 @@ import { SmallDataBoxComponent } from './components/action-center/general/small-
 import { DashboardComponent } from './components/action-center/dashboard/dashboard.component';
 import { DashboardHeadComponent } from './components/action-center/dashboard/dashboard-head/dashboard-head.component';
 import { DynamicFormDialogComponent } from './components/action-center/general/dynamic-form-dialog/dynamic-form-dialog.component';
+import {ReactiveFormsModule} from "@angular/forms";
+import {MatFormField} from "@angular/material/form-field";
+import {MatDialogActions, MatDialogTitle} from "@angular/material/dialog";
+import {MatButton} from "@angular/material/button";
+import {MatInput} from "@angular/material/input";
 
 @NgModule({
   declarations: [
@@ -39,6 +44,12 @@ import { DynamicFormDialogComponent } from './components/action-center/general/d
     BrowserModule,
     AppRoutingModule,
     NgOptimizedImage,
+    ReactiveFormsModule,
+    MatFormField,
+    MatDialogActions,
+    MatButton,
+    MatInput,
+    MatDialogTitle,
   ],
   providers: [],
   bootstrap: [AppComponent]
