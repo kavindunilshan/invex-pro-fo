@@ -24,7 +24,6 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { ProductComponent } from './components/action-center/management/product/product.component';
-import { ProductFormComponent } from './components/action-center/management/product/product-form/product-form.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +41,6 @@ import { ProductFormComponent } from './components/action-center/management/prod
     DashboardHeadComponent,
     DynamicFormDialogComponent,
     ProductComponent,
-    ProductFormComponent,
   ],
   imports: [
     MatIconModule,
