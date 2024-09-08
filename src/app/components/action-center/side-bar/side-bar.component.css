@@ -6,9 +6,11 @@
   box-shadow: 1px 0 4px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease-in-out;
   transform: translateX(-100%);
+  /*display: none;*/
 }
 
 .sidebar.expanded {
+  /*display: block;*/
   transform: translateX(0);
 }
 

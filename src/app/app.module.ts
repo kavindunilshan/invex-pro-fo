@@ -14,6 +14,7 @@ import { TopBarComponent } from './components/action-center/top-bar/top-bar.comp
 import { ActionCenterComponent } from './components/action-center/action-center.component';
 import { TableComponent } from './components/action-center/table/table.component';
 import { SmallDataBoxComponent } from './components/action-center/small-data-box/small-data-box.component';
+import { DashboardComponent } from './components/action-center/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { SmallDataBoxComponent } from './components/action-center/small-data-box
     TopBarComponent,
     ActionCenterComponent,
     TableComponent,
-    SmallDataBoxComponent
+    SmallDataBoxComponent,
+    DashboardComponent
   ],
   imports: [
     MatIconModule,
