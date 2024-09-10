@@ -27,6 +27,9 @@ import { ProductComponent } from './components/action-center/management/product/
 import {MatOption} from "@angular/material/core";
 import {MatSelect} from "@angular/material/select";
 import { HeaderWithButtonComponent } from './components/action-center/general/header-with-button/header-with-button.component';
+import { CategoryComponent } from './components/action-center/management/category/category.component';
+import { CustomerComponent } from './components/action-center/management/customer/customer.component';
+import { SupplierComponent } from './components/action-center/management/supplier/supplier.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +48,9 @@ import { HeaderWithButtonComponent } from './components/action-center/general/he
     DynamicFormDialogComponent,
     ProductComponent,
     HeaderWithButtonComponent,
+    CategoryComponent,
+    CustomerComponent,
+    SupplierComponent,
   ],
   imports: [
     MatIconModule,
