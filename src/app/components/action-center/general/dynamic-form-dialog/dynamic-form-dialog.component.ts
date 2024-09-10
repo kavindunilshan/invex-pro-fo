@@ -2,6 +2,14 @@ import { Component, Inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
+interface FormField {
+  label: string;
+  name: string;
+  type: string;
+  validators: string[];
+  options?: { value: any; viewValue: string }[]; // for select fields
+}
+
 @Component({
   selector: 'app-dynamic-form-dialog',
   templateUrl: './dynamic-form-dialog.component.html',
@@ -13,32 +21,27 @@ export class DynamicFormDialogComponent {
   constructor(
     private fb: FormBuilder,
     public dialogRef: MatDialogRef<DynamicFormDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: any
+    @Inject(MAT_DIALOG_DATA) public data: { formConfig: FormField[], title?: string }
   ) {
     this.form = this.fb.group({});
-    this.buildForm(data.formFields);
+    this.buildForm(data.formConfig);
   }
 
-  buildForm(fields: any[]): void {
+  buildForm(fields: FormField[]): void {
     fields.forEach(field => {
       this.form.addControl(
         field.name,
-        this.fb.control(field.value || '', this.getValidators(field))
+        this.fb.control('', this.getValidators(field))
       );
     });
   }
 
-  getValidators(field: any): any[] {
+  getValidators(field: FormField): any[] {
     const validators = [];
-    if (field.required) {
+    if (field.validators.includes('required')) {
       validators.push(Validators.required);
     }
-    if (field.minLength) {
-      validators.push(Validators.minLength(field.minLength));
-    }
-    if (field.maxLength) {
-      validators.push(Validators.maxLength(field.maxLength));
-    }
+    // Add other validators as needed (e.g., minLength, maxLength)
     return validators;
   }
 
