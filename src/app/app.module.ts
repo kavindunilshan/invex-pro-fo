@@ -24,6 +24,8 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { ProductComponent } from './components/action-center/management/product/product.component';
+import {MatOption} from "@angular/material/core";
+import {MatSelect} from "@angular/material/select";
 
 @NgModule({
   declarations: [
@@ -53,6 +55,8 @@ import { ProductComponent } from './components/action-center/management/product/
     MatDialogModule,
     MatButtonModule,
     MatInputModule,
+    MatOption,
+    MatSelect,
   ],
   providers: [],
   bootstrap: [AppComponent]
