@@ -26,6 +26,7 @@ import { MatInputModule } from '@angular/material/input';
 import { ProductComponent } from './components/action-center/management/product/product.component';
 import {MatOption} from "@angular/material/core";
 import {MatSelect} from "@angular/material/select";
+import { HeaderWithButtonComponent } from './components/action-center/general/header-with-button/header-with-button.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import {MatSelect} from "@angular/material/select";
     DashboardHeadComponent,
     DynamicFormDialogComponent,
     ProductComponent,
+    HeaderWithButtonComponent,
   ],
   imports: [
     MatIconModule,
