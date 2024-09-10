@@ -12,17 +12,17 @@
             <input matInput class="cf-input" *ngSwitchCase="'text'" [formControlName]="field.name" />
 
             <!-- Number Input -->
-            <input matInput *ngSwitchCase="'number'" [formControlName]="field.name" type="number" />
+            <input matInput class="cf-input" *ngSwitchCase="'number'" [formControlName]="field.name" type="number" />
 
             <!-- Select Input -->
-            <mat-select *ngSwitchCase="'select'" [formControlName]="field.name">
-              <mat-option *ngFor="let option of field.options" [value]="option.value">
+            <mat-select class="cf-input" *ngSwitchCase="'select'" [formControlName]="field.name">
+              <mat-option class="cf-input" *ngFor="let option of field.options" [value]="option.value">
                 {{ option.viewValue }}
               </mat-option>
             </mat-select>
           </ng-container>
           <mat-error *ngIf="form.get(field.name)?.hasError('required')">
-            {{ field.label }} is required
+            *{{ field.label }} is required
           </mat-error>
         </mat-form-field>
       </div>
@@ -31,6 +31,6 @@
 </mat-dialog-content>
 
 <mat-dialog-actions class="dialog-actions">
-  <button mat-button (click)="onCancel()" class="cancel-button">Cancel</button>
-  <button mat-button color="primary" (click)="onSubmit()" class="submit-button">Submit</button>
+  <button (click)="onCancel()" class="cancel-button">Cancel</button>
+  <button (click)="onSubmit()" class="submit-button">Submit</button>
 </mat-dialog-actions>

@@ -9,7 +9,8 @@ import {DynamicFormDialogComponent} from "../../general/dynamic-form-dialog/dyna
 })
 export class ProductComponent {
 
-  constructor(private dialog: MatDialog) {}
+  constructor(private dialog: MatDialog) {
+  }
 
   openProductForm() {
     const productFormConfig = [
@@ -23,11 +24,13 @@ export class ProductComponent {
     ];
 
     const dialogRef = this.dialog.open(DynamicFormDialogComponent, {
-      width: '500px',
+      width: '600px',
+      height: 'auto',
       data: {
         formConfig: productFormConfig,
         title: 'Add New Product'
-      }
+      },
+      panelClass: 'custom-dialog-container',
     });
 
     dialogRef.afterClosed().subscribe(result => {
