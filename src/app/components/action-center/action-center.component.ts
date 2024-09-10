@@ -6,10 +6,9 @@ import { Component } from '@angular/core';
   styleUrl: './action-center.component.css'
 })
 export class ActionCenterComponent {
-  isSidebarExpanded = false;
+  isSidebarExpanded = true;
 
   toggle(isExpanded: boolean) {
-    console.log("Calling here", isExpanded);
     this.isSidebarExpanded = isExpanded;
   }
 

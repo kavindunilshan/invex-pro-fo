@@ -3,9 +3,11 @@
 
 
   <div class="container">
-    <app-side-bar [isExpanded]="isSidebarExpanded"/>
-
     <div class="content-left">
+      <app-side-bar [isExpanded]="isSidebarExpanded"/>
+    </div>
+
+    <div class="content-right">
       <router-outlet></router-outlet>
     </div>
   </div>

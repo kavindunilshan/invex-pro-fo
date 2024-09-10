@@ -1,0 +1,36 @@
+<h2 mat-dialog-title class="dialog-title">{{ data.title || 'Form Dialog' }}</h2>
+
+<mat-dialog-content>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <!-- Use a wrapper div for flexbox -->
+    <div class="form-container">
+      <div class="form-field" *ngFor="let field of data.formConfig">
+        <mat-form-field appearance="fill" class="custom-form-field">
+          <label>{{ field.label }}</label>
+          <ng-container [ngSwitch]="field.type">
+            <!-- Text Input -->
+            <input matInput class="cf-input" *ngSwitchCase="'text'" [formControlName]="field.name" />
+
+            <!-- Number Input -->
+            <input matInput class="cf-input" *ngSwitchCase="'number'" [formControlName]="field.name" type="number" />
+
+            <!-- Select Input -->
+            <mat-select class="cf-input" *ngSwitchCase="'select'" [formControlName]="field.name">
+              <mat-option class="cf-input" *ngFor="let option of field.options" [value]="option.value">
+                {{ option.viewValue }}
+              </mat-option>
+            </mat-select>
+          </ng-container>
+          <mat-error *ngIf="form.get(field.name)?.hasError('required')">
+            *{{ field.label }} is required
+          </mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-actions class="dialog-actions">
+  <button (click)="onCancel()" class="cancel-button">Cancel</button>
+  <button (click)="onSubmit()" class="submit-button">Submit</button>
+</mat-dialog-actions>

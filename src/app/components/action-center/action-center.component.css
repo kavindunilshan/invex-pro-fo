@@ -1,8 +1,16 @@
 .action-center {
-  background-color: rgba(250, 248, 248, 0.85);
+  background-color: white;
 }
 
 .container {
   display: flex;
   flex-direction: row;
+}
+
+.content-left {
+  width: 12.8%;
+}
+
+.content-right {
+  width: 87.2%;
 }

@@ -1,1 +1,4 @@
-<button class="action-button">{{text}}</button>
+<button class="action-button" (click)="handleClick()">
+  <mat-icon *ngIf="icon">{{ icon }}</mat-icon>
+  <span>{{ text }}</span>
+</button>
