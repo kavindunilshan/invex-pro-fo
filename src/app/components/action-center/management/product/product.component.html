@@ -1,6 +1,7 @@
-<div class="product">
-  <div class="product-management-header">
-    <h1 class="page-title">Product Management</h1>
-    <button class="add-product-button">+ Add Product</button>
-  </div>
+<div class="product action-center-item">
+  <app-header-with-button
+    title="Product Management"
+    buttonText="+ Add Product"
+    (buttonClick)="openProductForm()"
+  />
 </div>

@@ -8,4 +8,10 @@ import {Component, Input} from '@angular/core';
 export class SideBarComponent {
   @Input() isExpanded = true;
 
+  selectedItem: string | null = null;
+
+  selectItem(item: string) {
+    this.selectedItem = item;
+  }
+
 }
