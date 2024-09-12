@@ -7,6 +7,7 @@ import {ProductComponent} from "./components/action-center/management/product/pr
 import {CategoryComponent} from "./components/action-center/management/category/category.component";
 import {CustomerComponent} from "./components/action-center/management/customer/customer.component";
 import {SupplierComponent} from "./components/action-center/management/supplier/supplier.component";
+import {NotificationComponent} from "./components/action-center/menu/notification/notification.component";
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -18,6 +19,8 @@ const routes: Routes = [
       { path: 'categories', component: CategoryComponent },
       { path: 'customers', component: CustomerComponent },
       { path: 'suppliers', component: SupplierComponent},
+
+      { path: 'notifications', component: NotificationComponent },
 
     ]
   }

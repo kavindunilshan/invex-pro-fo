@@ -30,6 +30,7 @@ import { HeaderWithButtonComponent } from './components/action-center/general/he
 import { CategoryComponent } from './components/action-center/management/category/category.component';
 import { CustomerComponent } from './components/action-center/management/customer/customer.component';
 import { SupplierComponent } from './components/action-center/management/supplier/supplier.component';
+import { NotificationComponent } from './components/action-center/menu/notification/notification.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +52,7 @@ import { SupplierComponent } from './components/action-center/management/supplie
     CategoryComponent,
     CustomerComponent,
     SupplierComponent,
+    NotificationComponent,
   ],
   imports: [
     MatIconModule,

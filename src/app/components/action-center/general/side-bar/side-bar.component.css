@@ -54,8 +54,7 @@
 }
 
 .topic-item.selected {
-  background-color: #4a03b2;
-  color: white;
+  background-color: rgba(74, 3, 178, 0.15);
 }
 
 

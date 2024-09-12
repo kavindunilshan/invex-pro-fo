@@ -1,4 +1,8 @@
 <div class="header-with-button">
   <h1 class="page-title">{{ title }}</h1>
-  <button class="action-button" (click)="onButtonClick()">{{ buttonText }}</button>
+  <button class="action-button"
+          *ngIf="!buttonDisabled"
+          (click)="onButtonClick()">
+    {{ buttonText }}
+  </button>
 </div>

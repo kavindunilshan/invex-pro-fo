@@ -8,6 +8,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 export class HeaderWithButtonComponent {
   @Input() title: string = 'Header Title';
   @Input() buttonText: string = '+';
+  @Input() buttonDisabled: boolean = false;
   @Output() buttonClick = new EventEmitter<void>();
 
   onButtonClick() {
