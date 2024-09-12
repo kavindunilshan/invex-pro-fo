@@ -1,0 +1,12 @@
+.char-container {
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(1, 120, 255, 0.1);
+  padding: 20px;
+  text-align: center;
+  border-radius: 8px;
+}
+
+h2 {
+  color: #370186;
+  margin-bottom: 20px;
+}

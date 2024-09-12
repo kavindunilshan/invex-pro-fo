@@ -31,6 +31,7 @@ import { CategoryComponent } from './components/action-center/management/categor
 import { CustomerComponent } from './components/action-center/management/customer/customer.component';
 import { SupplierComponent } from './components/action-center/management/supplier/supplier.component';
 import { NotificationComponent } from './components/action-center/menu/notification/notification.component';
+import { ChartContainerComponent } from './components/action-center/general/chart-container/chart-container.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +54,7 @@ import { NotificationComponent } from './components/action-center/menu/notificat
     CustomerComponent,
     SupplierComponent,
     NotificationComponent,
+    ChartContainerComponent,
   ],
   imports: [
     MatIconModule,
