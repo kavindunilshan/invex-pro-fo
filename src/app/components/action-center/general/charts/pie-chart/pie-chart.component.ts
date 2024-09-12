@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import {ChartData} from "chart.js";
+import {ArcElement, Chart, ChartData, Legend, PieController, Tooltip} from "chart.js";
+
+Chart.register(PieController, ArcElement, Tooltip, Legend);
 
 @Component({
   selector: 'app-pie-chart',
@@ -15,7 +17,9 @@ export class PieChartComponent {
     labels: ['Label 1', 'Label 2', 'Label 3'],
     datasets: [{
       data: [30, 40, 30],
-      backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56']
+      backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56'],
+      hoverBackgroundColor: ['#FF6384', '#36A2EB', '#FFCE56']
     }]
   };
+
 }
