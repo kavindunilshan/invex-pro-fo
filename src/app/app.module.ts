@@ -38,6 +38,7 @@ import {NotificationComponent} from './components/action-center/menu/notificatio
 import {ChartContainerComponent} from './components/action-center/general/chart-container/chart-container.component';
 import {PieChartComponent} from './components/action-center/general/charts/pie-chart/pie-chart.component';
 import { BarChartComponent } from './components/action-center/general/charts/bar-chart/bar-chart.component';
+import { LineChartComponent } from './components/action-center/general/charts/line-chart/line-chart.component';
 
 @NgModule({
   declarations: [
@@ -63,6 +64,7 @@ import { BarChartComponent } from './components/action-center/general/charts/bar
     ChartContainerComponent,
     PieChartComponent,
     BarChartComponent,
+    LineChartComponent,
   ],
   imports: [
     MatIconModule,
