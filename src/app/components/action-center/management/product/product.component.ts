@@ -16,8 +16,8 @@ export class ProductComponent {
     const productFormConfig = [
       { label: 'Product Name', name: 'name', type: 'text', validators: ['required'] },
       { label: 'Description', name: 'description', type: 'text', validators: ['required'] },
-      { label: 'Category', name: 'categoryId', type: 'select', validators: ['required'] },
-      { label: 'Supplier', name: 'supplierId', type: 'select', validators: ['required'] },
+      { label: 'Category', name: 'categoryId', type: 'text', validators: ['required'] },
+      { label: 'Supplier', name: 'supplierId', type: 'text', validators: ['required'] },
       { label: 'Quantity In Stock', name: 'quantityInStock', type: 'number', validators: ['required'] },
       { label: 'Unit Price', name: 'unitPrice', type: 'number', validators: ['required'] },
       { label: 'Reorder Level', name: 'reorderLevel', type: 'number', validators: ['required'] }
