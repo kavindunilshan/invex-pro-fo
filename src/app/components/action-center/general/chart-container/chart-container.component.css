@@ -1,12 +1,17 @@
 .char-container {
+  display: inline-block;
+  flex-direction: column;
   background-color: white;
-  box-shadow: 0 4px 8px rgba(1, 120, 255, 0.1);
+  box-shadow: 0 0 10px rgba(1, 120, 255, 0.2);
   padding: 20px;
+  margin: 20px;
   text-align: center;
   border-radius: 8px;
 }
 
 h2 {
-  color: #370186;
+  font-size: 20px;
+  font-weight: 500;
+  color: #4a03b2;
   margin-bottom: 20px;
 }
