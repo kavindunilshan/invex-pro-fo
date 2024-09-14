@@ -8,10 +8,10 @@ export class InventoryService {
 
   constructor() { }
 
-  private apiUrl = '/inventory';
+  private apiUrl = 'http://localhost:3000/api';
 
   createRecord(entityType: string, data: any): Promise<AxiosResponse<any>> {
-    return axios.post(`${this.apiUrl}/${entityType}/created`, data);
+    return axios.post(`${this.apiUrl}/${entityType}`, data);
   }
 
   getRecords(entityType: string): Promise<AxiosResponse<any[]>> {
