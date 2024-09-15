@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { MatDialog } from "@angular/material/dialog";
 import { DynamicFormDialogComponent } from "../../general/dynamic-form-dialog/dynamic-form-dialog.component";
+import {InventoryService} from "../../../../services/inventory.service";
 
 @Component({
   selector: 'app-category',
@@ -9,7 +10,7 @@ import { DynamicFormDialogComponent } from "../../general/dynamic-form-dialog/dy
 })
 export class CategoryComponent {
 
-  constructor(private dialog: MatDialog) {}
+  constructor(private dialog: MatDialog, private inventoryService: InventoryService) {}
 
   openCategoryForm() {
     const categoryFormConfig = [
@@ -29,7 +30,12 @@ export class CategoryComponent {
 
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
-        console.log('Category data:', result);
+        this.inventoryService.createRecord('categories', result)
+          .then(response => {
+          console.log('Category data:', response.data);
+        }).catch(error => {
+          console.error('Error creating category:', error);
+        })
       }
     });
   }
