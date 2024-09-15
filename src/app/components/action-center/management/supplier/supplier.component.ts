@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { MatDialog } from "@angular/material/dialog";
 import { DynamicFormDialogComponent } from "../../general/dynamic-form-dialog/dynamic-form-dialog.component";
+import {InventoryService} from "../../../../services/inventory.service";
 
 @Component({
   selector: 'app-supplier',
@@ -9,7 +10,7 @@ import { DynamicFormDialogComponent } from "../../general/dynamic-form-dialog/dy
 })
 export class SupplierComponent {
 
-  constructor(private dialog: MatDialog) {}
+  constructor(private dialog: MatDialog, private inventoryService: InventoryService) {}
 
   openSupplierForm() {
     const supplierFormConfig = [
@@ -35,7 +36,12 @@ export class SupplierComponent {
 
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
-        console.log('Supplier data:', result);
+        this.inventoryService.createRecord('suppliers', result)
+          .then(response => {
+          console.log('Supplier data:', response.data);
+        }).catch(error => {
+          console.error('Error creating supplier:', error);
+        })
       }
     });
   }
