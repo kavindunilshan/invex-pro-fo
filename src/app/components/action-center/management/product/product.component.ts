@@ -1,23 +1,34 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {MatDialog} from "@angular/material/dialog";
 import {DynamicFormDialogComponent} from "../../general/dynamic-form-dialog/dynamic-form-dialog.component";
+import {InventoryService} from "../../../../services/inventory.service";
 
 @Component({
   selector: 'app-product',
   templateUrl: './product.component.html',
   styleUrl: './product.component.css'
 })
-export class ProductComponent {
+export class ProductComponent implements OnInit {
+  // store suppliers
+  suppliers: any[] = [];
 
-  constructor(private dialog: MatDialog) {
+
+  constructor(private dialog: MatDialog, private inventoryService: InventoryService) {
+  }
+
+  ngOnInit() {
+    this.inventoryService.getRecords('suppliers')
+      .then(response => {
+        this.suppliers = response.data;
+      })
   }
 
   openProductForm() {
     const productFormConfig = [
       { label: 'Product Name', name: 'name', type: 'text', validators: ['required'] },
       { label: 'Description', name: 'description', type: 'text', validators: ['required'] },
-      { label: 'Category', name: 'categoryId', type: 'text', validators: ['required'] },
-      { label: 'Supplier', name: 'supplierId', type: 'text', validators: ['required'] },
+      { label: 'Category', name: 'category', type: 'text', validators: ['required'] },
+      { label: 'Supplier', name: 'supplier', type: 'text', validators: ['required'] },
       { label: 'Quantity In Stock', name: 'quantityInStock', type: 'number', validators: ['required'] },
       { label: 'Unit Price', name: 'unitPrice', type: 'number', validators: ['required'] },
       { label: 'Reorder Level', name: 'reorderLevel', type: 'number', validators: ['required'] }
