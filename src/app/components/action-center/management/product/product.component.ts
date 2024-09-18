@@ -28,7 +28,7 @@ export class ProductComponent implements OnInit {
       { label: 'Product Name', name: 'name', type: 'text', validators: ['required'] },
       { label: 'Description', name: 'description', type: 'text', validators: ['required'] },
       { label: 'Category', name: 'category', type: 'text', validators: ['required'] },
-      { label: 'Supplier', name: 'supplier', type: 'text', validators: ['required'] },
+      { label: 'Supplier', name: 'supplier', type: 'select', validators: ['required'] },
       { label: 'Quantity In Stock', name: 'quantityInStock', type: 'number', validators: ['required'] },
       { label: 'Unit Price', name: 'unitPrice', type: 'number', validators: ['required'] },
       { label: 'Reorder Level', name: 'reorderLevel', type: 'number', validators: ['required'] }

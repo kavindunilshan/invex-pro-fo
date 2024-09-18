@@ -39,6 +39,7 @@ import {ChartContainerComponent} from './components/action-center/general/chart-
 import {PieChartComponent} from './components/action-center/general/charts/pie-chart/pie-chart.component';
 import { BarChartComponent } from './components/action-center/general/charts/bar-chart/bar-chart.component';
 import { LineChartComponent } from './components/action-center/general/charts/line-chart/line-chart.component';
+import {MatSelect} from "@angular/material/select";
 
 @NgModule({
   declarations: [
@@ -66,20 +67,21 @@ import { LineChartComponent } from './components/action-center/general/charts/li
     BarChartComponent,
     LineChartComponent,
   ],
-  imports: [
-    MatIconModule,
-    BrowserModule,
-    BrowserAnimationsModule,  // Required for Angular Material
-    AppRoutingModule,
-    NgOptimizedImage,
-    ReactiveFormsModule,
-    MatFormFieldModule,
-    MatDialogModule,
-    MatButtonModule,
-    MatInputModule,
-    MatOption,
-    BaseChartDirective,
-  ],
+    imports: [
+        MatIconModule,
+        BrowserModule,
+        BrowserAnimationsModule,  // Required for Angular Material
+        AppRoutingModule,
+        NgOptimizedImage,
+        ReactiveFormsModule,
+        MatFormFieldModule,
+        MatDialogModule,
+        MatButtonModule,
+        MatInputModule,
+        MatOption,
+        BaseChartDirective,
+        MatSelect,
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
