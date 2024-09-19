@@ -70,7 +70,7 @@ import {MatSelect} from "@angular/material/select";
     imports: [
         MatIconModule,
         BrowserModule,
-        BrowserAnimationsModule,  // Required for Angular Material
+        BrowserAnimationsModule,
         AppRoutingModule,
         NgOptimizedImage,
         ReactiveFormsModule,
