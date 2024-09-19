@@ -16,9 +16,9 @@
               <input matInput class="cf-input" *ngSwitchCase="'number'" [formControlName]="field.name" type="number" />
 
               <!-- Select Input -->
-              <mat-select class="cf-input" *ngSwitchCase="'select'" [formControlName]="field.name">
-                <mat-option class="cf-input" *ngFor="let option of field.options" [value]="option.value">
-                  {{ option.viewValue }}
+              <mat-select *ngSwitchCase="'select'" [formControlName]="field.name">
+                <mat-option *ngFor="let option of field.options" [value]="option">
+                  {{ option }}
                 </mat-option>
               </mat-select>
             </ng-container>
