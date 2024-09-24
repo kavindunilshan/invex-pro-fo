@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {MatDialog} from "@angular/material/dialog";
 import {DynamicFormDialogComponent} from "../../general/dynamic-form-dialog/dynamic-form-dialog.component";
 import {InventoryService} from "../../../../services/inventory.service";
+import {Overlay} from "@angular/cdk/overlay";
 
 @Component({
   selector: 'app-category',
@@ -10,7 +11,11 @@ import {InventoryService} from "../../../../services/inventory.service";
 })
 export class CategoryComponent implements OnInit {
 
-  constructor(private dialog: MatDialog, private inventoryService: InventoryService) {}
+  constructor(
+    private dialog: MatDialog,
+    private overlay: Overlay,
+    private inventoryService: InventoryService
+  ) {}
 
   categoryFormConfig = [
     { label: 'Category Name', name: 'name', type: 'text', validators: ['required'] },
@@ -42,6 +47,7 @@ export class CategoryComponent implements OnInit {
         title: 'Add New Category'
       },
       panelClass: 'custom-dialog-container',
+      scrollStrategy: this.overlay.scrollStrategies.close()
     });
 
     dialogRef.afterClosed().subscribe(result => {

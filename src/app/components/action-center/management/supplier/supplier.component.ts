@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import { MatDialog } from "@angular/material/dialog";
 import { DynamicFormDialogComponent } from "../../general/dynamic-form-dialog/dynamic-form-dialog.component";
 import {InventoryService} from "../../../../services/inventory.service";
+import {Overlay} from "@angular/cdk/overlay";
 
 @Component({
   selector: 'app-supplier',
@@ -10,7 +11,11 @@ import {InventoryService} from "../../../../services/inventory.service";
 })
 export class SupplierComponent implements OnInit {
 
-  constructor(private dialog: MatDialog, private inventoryService: InventoryService) {}
+  constructor(
+    private dialog: MatDialog,
+    private overlay: Overlay,
+    private inventoryService: InventoryService
+  ) {}
 
   supplierFormConfig = [
     { label: 'Supplier Name', name: 'supplierName', type: 'text', validators: ['required'] },
@@ -45,6 +50,7 @@ export class SupplierComponent implements OnInit {
         title: 'Add New Supplier'
       },
       panelClass: 'custom-dialog-container',
+      scrollStrategy: this.overlay.scrollStrategies.close()
     });
 
     dialogRef.afterClosed().subscribe(result => {
