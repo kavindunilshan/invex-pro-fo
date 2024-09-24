@@ -40,6 +40,7 @@ import {PieChartComponent} from './components/action-center/general/charts/pie-c
 import { BarChartComponent } from './components/action-center/general/charts/bar-chart/bar-chart.component';
 import { LineChartComponent } from './components/action-center/general/charts/line-chart/line-chart.component';
 import {MatSelect} from "@angular/material/select";
+import { SubTopicComponent } from './components/action-center/general/sub-topic/sub-topic.component';
 
 @NgModule({
   declarations: [
@@ -66,6 +67,7 @@ import {MatSelect} from "@angular/material/select";
     PieChartComponent,
     BarChartComponent,
     LineChartComponent,
+    SubTopicComponent,
   ],
     imports: [
         MatIconModule,
