@@ -4,4 +4,14 @@
     buttonText="+ Add Supplier"
     (buttonClick)="openSupplierForm()"
   />
+
+  <div class="content">
+    <div>
+      <app-table
+        [columns]="supplierColumns"
+        [data]="suppliersData"
+        />
+    </div>
+
+  </div>
 </div>

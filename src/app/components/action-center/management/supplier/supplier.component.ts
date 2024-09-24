@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import { MatDialog } from "@angular/material/dialog";
 import { DynamicFormDialogComponent } from "../../general/dynamic-form-dialog/dynamic-form-dialog.component";
 import {InventoryService} from "../../../../services/inventory.service";
@@ -8,27 +8,40 @@ import {InventoryService} from "../../../../services/inventory.service";
   templateUrl: './supplier.component.html',
   styleUrls: ['./supplier.component.css']
 })
-export class SupplierComponent {
+export class SupplierComponent implements OnInit {
 
   constructor(private dialog: MatDialog, private inventoryService: InventoryService) {}
 
-  openSupplierForm() {
-    const supplierFormConfig = [
-      { label: 'Supplier Name', name: 'supplierName', type: 'text', validators: ['required'] },
-      { label: 'Contact Name', name: 'contactName', type: 'text', validators: ['required'] },
-      { label: 'Address', name: 'address', type: 'text', validators: ['required'] },
-      { label: 'City', name: 'city', type: 'text', validators: ['required'] },
-      { label: 'Postal Code', name: 'postalCode', type: 'text', validators: ['required'] },
-      { label: 'Country', name: 'country', type: 'text', validators: ['required'] },
-      { label: 'Phone', name: 'phone', type: 'text', validators: ['required'] },
-      { label: 'Email', name: 'email', type: 'text', validators: ['required'] }
-    ];
+  supplierFormConfig = [
+    { label: 'Supplier Name', name: 'supplierName', type: 'text', validators: ['required'] },
+    { label: 'Contact Name', name: 'contactName', type: 'text', validators: ['required'] },
+    { label: 'Address', name: 'address', type: 'text', validators: ['required'] },
+    { label: 'City', name: 'city', type: 'text', validators: ['required'] },
+    { label: 'Postal Code', name: 'postalCode', type: 'text', validators: ['required'] },
+    { label: 'Country', name: 'country', type: 'text', validators: ['required'] },
+    { label: 'Phone', name: 'phone', type: 'text', validators: ['required'] },
+    { label: 'Email', name: 'email', type: 'text', validators: ['required'] }
+  ];
 
+  supplierColumns = this.supplierFormConfig.map(field => ({
+    key: field.name,
+    label: field.label
+  }));
+
+  suppliersData: Array<any> = [];
+
+  ngOnInit(): void {
+      this.inventoryService.getRecords('suppliers').then(response => {
+          this.suppliersData = response.data;
+      })
+  }
+
+  openSupplierForm() {
     const dialogRef = this.dialog.open(DynamicFormDialogComponent, {
       width: '600px',
       height: 'auto',
       data: {
-        formConfig: supplierFormConfig,
+        formConfig: this.supplierFormConfig,
         title: 'Add New Supplier'
       },
       panelClass: 'custom-dialog-container',
