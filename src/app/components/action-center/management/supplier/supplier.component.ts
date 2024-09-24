@@ -51,6 +51,7 @@ export class SupplierComponent implements OnInit {
       if (result) {
         this.inventoryService.createRecord('suppliers', result)
           .then(response => {
+            this.suppliersData.push(response.data);
           console.log('Supplier data:', response.data);
         }).catch(error => {
           console.error('Error creating supplier:', error);
