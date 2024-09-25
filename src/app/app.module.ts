@@ -28,6 +28,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
 import {ProductComponent} from './components/action-center/management/product/product.component';
 import {MatOption} from "@angular/material/core";
+import {MatSelectModule} from '@angular/material/select'
 import {
   HeaderWithButtonComponent
 } from './components/action-center/general/header-with-button/header-with-button.component';
@@ -80,9 +81,8 @@ import { SubTopicComponent } from './components/action-center/general/sub-topic/
         MatDialogModule,
         MatButtonModule,
         MatInputModule,
-        MatOption,
         BaseChartDirective,
-        MatSelect,
+        MatSelectModule
     ],
   providers: [],
   bootstrap: [AppComponent]

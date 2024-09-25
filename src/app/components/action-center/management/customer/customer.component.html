@@ -5,4 +5,12 @@
     (buttonClick)="openCustomerForm()"
   >
   </app-header-with-button>
+
+  <div class="content">
+    <div>
+      <app-table
+        [columns]="customersColumns"
+        [data]="customersData"
+      />
+    </div>
 </div>

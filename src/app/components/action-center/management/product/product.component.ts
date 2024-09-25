@@ -3,6 +3,7 @@ import {MatDialog} from "@angular/material/dialog";
 import {DynamicFormDialogComponent} from "../../general/dynamic-form-dialog/dynamic-form-dialog.component";
 import {InventoryService} from "../../../../services/inventory.service";
 import {SpecificService} from "../../../../services/specific.service";
+import { Overlay } from '@angular/cdk/overlay';
 
 @Component({
   selector: 'app-product',
@@ -17,6 +18,7 @@ export class ProductComponent implements OnInit {
   constructor(
     private dialog: MatDialog,
     private inventoryService: InventoryService,
+    private overlay: Overlay,
     private specificService: SpecificService,
     private viewContainerRef: ViewContainerRef,
   ) {
@@ -50,6 +52,7 @@ export class ProductComponent implements OnInit {
         title: 'Add New Product'
       },
       panelClass: 'custom-dialog-container',
+      scrollStrategy: this.overlay.scrollStrategies.close()
     });
 
     dialogRef.afterClosed().subscribe(result => {

@@ -11,7 +11,7 @@ th {
   background-color: #33027b;
   color: white;
   padding: 15px;
-  text-align: left;
+  text-align: center;
   font-size: 16px;
   font-weight: 600;
   text-transform: uppercase;
@@ -22,6 +22,7 @@ td {
   color: #242323;
   border-bottom: 1px solid #9c9595;
   font-size: 14px;
+  text-align: center;
 }
 
 tbody tr {

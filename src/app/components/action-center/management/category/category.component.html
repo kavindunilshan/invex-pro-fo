@@ -4,4 +4,13 @@
     buttonText="+ Add Category"
     (buttonClick)="openCategoryForm()"
   />
+
+  <div class="content">
+    <div>
+      <app-table
+        [columns]="categoriesColumns"
+        [data]="categoriesData"
+      />
+    </div>
+  </div>
 </div>
