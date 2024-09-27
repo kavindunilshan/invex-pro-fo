@@ -42,6 +42,10 @@ import { BarChartComponent } from './components/action-center/general/charts/bar
 import { LineChartComponent } from './components/action-center/general/charts/line-chart/line-chart.component';
 import {MatSelect} from "@angular/material/select";
 import { SubTopicComponent } from './components/action-center/general/sub-topic/sub-topic.component';
+import { OrdersComponent } from './components/action-center/transactions/orders/orders.component';
+import { PurchaseComponent } from './components/action-center/transactions/purchase/purchase.component';
+import { ReturnsComponent } from './components/action-center/transactions/returns/returns.component';
+import { ShipmentsComponent } from './components/action-center/transactions/shipments/shipments.component';
 
 @NgModule({
   declarations: [
@@ -69,6 +73,10 @@ import { SubTopicComponent } from './components/action-center/general/sub-topic/
     BarChartComponent,
     LineChartComponent,
     SubTopicComponent,
+    OrdersComponent,
+    PurchaseComponent,
+    ReturnsComponent,
+    ShipmentsComponent,
   ],
     imports: [
         MatIconModule,

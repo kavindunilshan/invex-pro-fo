@@ -1,23 +1,16 @@
 .sub-topic {
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  padding: 16px;
-  background-color: white;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: box-shadow 0.3s ease-in-out;
-}
-
-.sub-topic:hover {
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  padding: 16px 16px 16px 0;
 }
 
 .title {
-  color: #4a03b2;
+  color: #370186;
   font-size: 24px;
-  margin-bottom: 8px;
+  font-weight: 500;
+  margin-bottom: 0;
 }
 
 .subtitle {
-  color: #666;
-  font-size: 16px;
+  color: #5d5d5d;
+  font-size: 14px;
+  margin-top: 2px;
 }
