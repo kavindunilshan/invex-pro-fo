@@ -28,8 +28,8 @@ const routes: Routes = [
 
       { path: 'orders', component: OrdersComponent },
       { path: 'purchases', component: PurchaseComponent },
-      { path: 'shipments', component: ShipmentsComponent },
       { path: 'returns', component: ReturnsComponent },
+      { path: 'shipments', component: ShipmentsComponent },
 
     ]
   }
