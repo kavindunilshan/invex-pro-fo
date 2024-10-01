@@ -21,6 +21,15 @@
                   {{ option }}
                 </mat-option>
               </mat-select>
+
+              <ng-container *ngSwitchCase="'date'">
+                <div class="date-picker-cmp">
+                  <input matInput class="cf-date-input" [matDatepicker]="picker" [formControlName]="field.name" />
+                  <mat-datepicker-toggle matPrefix [for]="picker"></mat-datepicker-toggle>
+                </div>
+                <mat-datepicker #picker></mat-datepicker>
+              </ng-container>
+
             </ng-container>
             <mat-error *ngIf="form.get(field.name)?.hasError('required')">
               *{{ field.label }} is required

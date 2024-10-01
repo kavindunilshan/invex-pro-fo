@@ -26,6 +26,7 @@
 /* Mat-Form-Field Custom Styling */
 .custom-form-field {
   width: 100%;
+  height: 110px;
 }
 
 .custom-form-field mat-label, .custom-form-field label {
@@ -92,13 +93,16 @@ mat-error {
 
 .cf-input {
   width: 100%;
-  padding: 8px;
   font-size: 16px;
+  margin-top: 10px;
 }
 
 .cf-input2 {
-  padding: 8px;
   font-size: 16px;
+}
+
+.cf-date-input {
+  scale: 0.8;
 }
 
 .submit-button:hover, .cancel-button:hover {
@@ -117,4 +121,11 @@ mat-dialog-content {
   justify-content: space-around;
   gap: 20px;
   margin-top: 40px;
+}
+
+.date-picker-cmp {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 20px;
 }

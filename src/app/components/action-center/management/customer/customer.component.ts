@@ -22,6 +22,7 @@ export class CustomerComponent implements OnInit {
     { label: 'Contact Name', name: 'contactName', type: 'text', validators: ['required'] },
     { label: 'Address', name: 'address', type: 'text', validators: ['required'] },
     { label: 'City', name: 'city', type: 'text', validators: ['required'] },
+    { label: 'Region', name: 'region', type: 'date', validators: ['required'] },
     { label: 'Postal Code', name: 'postalCode', type: 'text', validators: ['required'] },
     { label: 'Country', name: 'country', type: 'text', validators: ['required'] },
     { label: 'Phone', name: 'phone', type: 'text', validators: ['required'] },
