@@ -29,6 +29,32 @@
   height: 110px;
 }
 
+mat-form-field {
+  color: white;
+}
+
+/* Override the background color for filled text fields */
+::ng-deep .mdc-text-field--filled:not(.mdc-text-field--disabled) {
+  background-color: white !important; /* Change the background color to white */
+}
+
+/* Ensure the label color is visible */
+::ng-deep .mdc-text-field--filled .mdc-floating-label {
+  color: black !important; /* Change label color to black */
+}
+
+/* Change input text color */
+::ng-deep .mdc-text-field--filled .mdc-text-field__input {
+  color: black !important; /* Change input text color to black */
+  caret-color: black !important; /* Change caret color to black */
+}
+
+/* Ensure ripple effect color */
+::ng-deep .mdc-text-field--filled .mdc-line-ripple {
+  background-color: black !important; /* Change ripple color if needed */
+}
+
+
 .custom-form-field mat-label, .custom-form-field label {
   color: #370186;
   font-size: 14px;
