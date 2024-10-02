@@ -27,7 +27,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import {MatButtonModule} from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
 import {ProductComponent} from './components/action-center/management/product/product.component';
-import {MatOption} from "@angular/material/core";
+import {MatNativeDateModule} from "@angular/material/core";
 import {MatSelectModule} from '@angular/material/select'
 import {
   HeaderWithButtonComponent
@@ -38,14 +38,14 @@ import {SupplierComponent} from './components/action-center/management/supplier/
 import {NotificationComponent} from './components/action-center/menu/notification/notification.component';
 import {ChartContainerComponent} from './components/action-center/general/chart-container/chart-container.component';
 import {PieChartComponent} from './components/action-center/general/charts/pie-chart/pie-chart.component';
-import { BarChartComponent } from './components/action-center/general/charts/bar-chart/bar-chart.component';
-import { LineChartComponent } from './components/action-center/general/charts/line-chart/line-chart.component';
-import {MatSelect} from "@angular/material/select";
-import { SubTopicComponent } from './components/action-center/general/sub-topic/sub-topic.component';
-import { OrdersComponent } from './components/action-center/transactions/orders/orders.component';
-import { PurchaseComponent } from './components/action-center/transactions/purchase/purchase.component';
-import { ReturnsComponent } from './components/action-center/transactions/returns/returns.component';
-import { ShipmentsComponent } from './components/action-center/transactions/shipments/shipments.component';
+import {BarChartComponent} from './components/action-center/general/charts/bar-chart/bar-chart.component';
+import {LineChartComponent} from './components/action-center/general/charts/line-chart/line-chart.component';
+import {MatDatepickerModule} from '@angular/material/datepicker'
+import {SubTopicComponent} from './components/action-center/general/sub-topic/sub-topic.component';
+import {OrdersComponent} from './components/action-center/transactions/orders/orders.component';
+import {PurchaseComponent} from './components/action-center/transactions/purchase/purchase.component';
+import {ReturnsComponent} from './components/action-center/transactions/returns/returns.component';
+import {ShipmentsComponent} from './components/action-center/transactions/shipments/shipments.component';
 
 @NgModule({
   declarations: [
@@ -90,9 +90,13 @@ import { ShipmentsComponent } from './components/action-center/transactions/ship
         MatButtonModule,
         MatInputModule,
         BaseChartDirective,
-        MatSelectModule
+        MatSelectModule,
+        MatDatepickerModule,
+      MatNativeDateModule
     ],
-  providers: [],
+  providers: [
+    MatDatepickerModule
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
