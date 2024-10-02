@@ -11,8 +11,11 @@ import { Overlay } from '@angular/cdk/overlay';
   styleUrl: './product.component.css'
 })
 export class ProductComponent implements OnInit {
-  // store suppliers
-  suppliers: any[] = ["a", "b", "c"];
+  suppliers: any[] = [];
+  supplierNames: any[] = ["a", "b", "c"];
+
+  categories: any[] = [];
+  categoryNames: any[] = ["a", "b", "c"];
 
 
   constructor(
@@ -25,19 +28,25 @@ export class ProductComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.specificService.getRecordsByField('suppliers', 'names')
+    this.inventoryService.getRecords('suppliers')
       .then(response => {
-        console.log('Suppliers:', response.data)
-        // this.suppliers = response.data;
-      })
+        this.supplierNames = response.data.map(supplier => supplier.supplierName);
+        this.suppliers = response.data;
+      });
+
+    this.inventoryService.getRecords('categories')
+      .then(response => {
+        this.categoryNames = response.data.map(category => category.categoryName);
+        this.categories = response.data;
+      });
   }
 
   openProductForm() {
     const productFormConfig = [
       { label: 'Product Name', name: 'name', type: 'text', validators: ['required'] },
       { label: 'Description', name: 'description', type: 'text', validators: ['required'] },
-      { label: 'Category', name: 'category', type: 'text', validators: ['required'] },
-      { label: 'Supplier', name: 'supplier', type: 'select', validators: ['required'], options: this.suppliers },
+      { label: 'Category', name: 'category', type: 'select', validators: ['required'], options: this.categoryNames },
+      { label: 'Supplier', name: 'supplier', type: 'select', validators: ['required'], options: this.supplierNames },
       { label: 'Quantity In Stock', name: 'quantityInStock', type: 'number', validators: ['required'] },
       { label: 'Unit Price', name: 'unitPrice', type: 'number', validators: ['required'] },
       { label: 'Reorder Level', name: 'reorderLevel', type: 'number', validators: ['required'] }
@@ -57,7 +66,17 @@ export class ProductComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
-        console.log('Product data:', result);
+        const supplier = this.suppliers.find(supplier => supplier.supplierName === result.supplier);
+        const category = this.categories.find(category => category.categoryName === result.category);
+        delete result.supplierName;
+        delete result.categoryName;
+        this.inventoryService.createRecord('products',{
+          ...result,
+          supplierId: supplier.id,
+          categoryId: category.id,
+        }).then(response => {
+          console.log('Product added:', response);
+        });
       }
     });
   }
