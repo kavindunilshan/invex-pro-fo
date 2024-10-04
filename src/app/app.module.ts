@@ -46,6 +46,8 @@ import {OrdersComponent} from './components/action-center/transactions/orders/or
 import {PurchaseComponent} from './components/action-center/transactions/purchase/purchase.component';
 import {ReturnsComponent} from './components/action-center/transactions/returns/returns.component';
 import {ShipmentsComponent} from './components/action-center/transactions/shipments/shipments.component';
+import { AuthButtonComponent } from './utils/auth-button/auth-button.component';
+import {AuthModule} from "@auth0/auth0-angular";
 
 @NgModule({
   declarations: [
@@ -77,6 +79,7 @@ import {ShipmentsComponent} from './components/action-center/transactions/shipme
     PurchaseComponent,
     ReturnsComponent,
     ShipmentsComponent,
+    AuthButtonComponent,
   ],
     imports: [
         MatIconModule,
@@ -92,7 +95,14 @@ import {ShipmentsComponent} from './components/action-center/transactions/shipme
         BaseChartDirective,
         MatSelectModule,
         MatDatepickerModule,
-      MatNativeDateModule
+      MatNativeDateModule,
+      AuthModule.forRoot({
+        domain: 'dev-c5ls7veng3ljfc5g.us.auth0.com',
+        clientId: 'BrXpQ8T5kbczgBXZDujxeuMfeBnuiQeg',
+        authorizationParams: {
+          redirect_uri: window.location.origin,
+        },
+      }),
     ],
   providers: [
     MatDatepickerModule
