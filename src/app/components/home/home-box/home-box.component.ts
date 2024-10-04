@@ -11,7 +11,7 @@ export class HomeBoxComponent {
   constructor(private router: Router) {}
 
   navigateToActionCenter() {
-    this.router.navigate(['/action-center']);
+    this.router.navigate(['/action-center/dashboard']);
   }
 
 
