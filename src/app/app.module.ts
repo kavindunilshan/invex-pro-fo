@@ -100,7 +100,7 @@ import {AuthModule} from "@auth0/auth0-angular";
         domain: 'dev-c5ls7veng3ljfc5g.us.auth0.com',
         clientId: 'BrXpQ8T5kbczgBXZDujxeuMfeBnuiQeg',
         authorizationParams: {
-          redirect_uri: window.location.origin,
+          redirect_uri: window.location.origin+"/action-center",
         },
       }),
     ],
