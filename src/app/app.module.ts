@@ -48,6 +48,9 @@ import {ReturnsComponent} from './components/action-center/transactions/returns/
 import {ShipmentsComponent} from './components/action-center/transactions/shipments/shipments.component';
 import { AuthButtonComponent } from './utils/auth-button/auth-button.component';
 import {AuthModule} from "@auth0/auth0-angular";
+import { UserComponent } from './components/action-center/settings/user/user.component';
+import { PreferenceComponent } from './components/action-center/settings/preference/preference.component';
+import { SupportComponent } from './components/action-center/settings/support/support.component';
 
 @NgModule({
   declarations: [
@@ -80,6 +83,9 @@ import {AuthModule} from "@auth0/auth0-angular";
     ReturnsComponent,
     ShipmentsComponent,
     AuthButtonComponent,
+    UserComponent,
+    PreferenceComponent,
+    SupportComponent,
   ],
     imports: [
         MatIconModule,
