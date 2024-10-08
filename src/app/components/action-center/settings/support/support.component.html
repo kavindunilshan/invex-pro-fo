@@ -8,7 +8,7 @@
     <div *ngFor="let faq of faqs; let i = index" class="faq-item">
       <h3 (click)="toggleFAQ(i)">
         {{i + 1}}). {{ faq.question }}
-        <span class="toggle-icon">{{ isAnswerVisible(i) ? '▲' : '▼' }}</span>
+        <mat-icon class="toggle-icon">{{ isAnswerVisible(i) ? 'expand_less' : 'expand_more' }}</mat-icon>
       </h3>
       <p *ngIf="isAnswerVisible(i)">{{ faq.answer }}</p>
     </div>

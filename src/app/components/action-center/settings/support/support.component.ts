@@ -27,8 +27,12 @@ export class SupportComponent implements OnInit {
         question: 'How do I contact support?',
         answer: 'You can contact support via the contact form available on the Support page or through email.',
         open: false
-      }
-      // Add more FAQs as needed
+      },
+      {
+        question: 'How to change stat types?',
+        answer: 'You can contact support via the contact form available on the Support page or through email.',
+        open: false
+      },
     ];
   }
 

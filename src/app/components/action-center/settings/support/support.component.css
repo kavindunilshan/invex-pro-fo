@@ -21,6 +21,9 @@
 .faq-item {
   margin-left: 50px;
   margin-bottom: 25px;
+  border-bottom: 2px solid rgba(156, 149, 149, 0.31);
+  width: 500px;
+  padding: 10px;
 }
 
 .faq-item h3 {
@@ -42,7 +45,7 @@
 }
 
 .toggle-icon {
-  font-size: 12px;
+  font-size: 18px;
   margin-left: 10px;
   color: #370186;
 }
