@@ -9,6 +9,8 @@
 
 .content-left {
   width: 12.8%;
+  border-right: 2px solid rgba(127, 127, 95, 0.24);
+  box-shadow: 1px 0 4px rgba(0, 0, 0, 0.1);
 }
 
 .content-right {
