@@ -16,8 +16,6 @@ import {TopBarComponent} from './components/action-center/general/top-bar/top-ba
 import {ActionCenterComponent} from './components/action-center/action-center.component';
 import {TableComponent} from './components/action-center/general/table/table.component';
 import {SmallDataBoxComponent} from './components/action-center/general/small-data-box/small-data-box.component';
-import {DashboardComponent} from './components/action-center/dashboard/dashboard.component';
-import {DashboardHeadComponent} from './components/action-center/dashboard/dashboard-head/dashboard-head.component';
 import {
   DynamicFormDialogComponent
 } from './components/action-center/general/dynamic-form-dialog/dynamic-form-dialog.component';
@@ -51,6 +49,10 @@ import {AuthModule} from "@auth0/auth0-angular";
 import { UserComponent } from './components/action-center/settings/user/user.component';
 import { PreferenceComponent } from './components/action-center/settings/preference/preference.component';
 import { SupportComponent } from './components/action-center/settings/support/support.component';
+import {DashboardComponent} from "./components/action-center/menu/dashboard/dashboard.component";
+import {
+  DashboardHeadComponent
+} from "./components/action-center/menu/dashboard/dashboard-head/dashboard-head.component";
 
 @NgModule({
   declarations: [

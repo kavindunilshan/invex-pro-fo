@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import {HomeComponent} from "./components/home/home.component";
 import {ActionCenterComponent} from "./components/action-center/action-center.component";
-import {DashboardComponent} from "./components/action-center/dashboard/dashboard.component";
 import {ProductComponent} from "./components/action-center/management/product/product.component";
 import {CategoryComponent} from "./components/action-center/management/category/category.component";
 import {CustomerComponent} from "./components/action-center/management/customer/customer.component";
@@ -15,6 +14,7 @@ import {ReturnsComponent} from "./components/action-center/transactions/returns/
 import {UserComponent} from "./components/action-center/settings/user/user.component";
 import {PreferenceComponent} from "./components/action-center/settings/preference/preference.component";
 import {SupportComponent} from "./components/action-center/settings/support/support.component";
+import {DashboardComponent} from "./components/action-center/menu/dashboard/dashboard.component";
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
