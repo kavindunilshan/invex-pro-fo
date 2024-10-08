@@ -12,6 +12,9 @@ import {OrdersComponent} from "./components/action-center/transactions/orders/or
 import {PurchaseComponent} from "./components/action-center/transactions/purchase/purchase.component";
 import {ShipmentsComponent} from "./components/action-center/transactions/shipments/shipments.component";
 import {ReturnsComponent} from "./components/action-center/transactions/returns/returns.component";
+import {UserComponent} from "./components/action-center/settings/user/user.component";
+import {PreferenceComponent} from "./components/action-center/settings/preference/preference.component";
+import {SupportComponent} from "./components/action-center/settings/support/support.component";
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -30,6 +33,10 @@ const routes: Routes = [
       { path: 'purchases', component: PurchaseComponent },
       { path: 'returns', component: ReturnsComponent },
       { path: 'shipments', component: ShipmentsComponent },
+
+      { path: 'users', component: UserComponent},
+      { path: 'preferences', component: PreferenceComponent},
+      { path: 'support', component: SupportComponent}
 
     ]
   }
