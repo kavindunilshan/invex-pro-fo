@@ -1,0 +1,34 @@
+<div class="user action-center-item">
+  <app-header-with-button title="User Management" [buttonDisabled]="true"></app-header-with-button>
+
+  <!-- First Section: User Avatar and Basic Details -->
+  <div class="user-info">
+    <img src="https://th.bing.com/th/id/OIP.YxS3DeAryq6-d_u_SZNyiQHaEo?rs=1&pid=ImgDetMain" alt="{{ user?.name }}" class="user-avatar" />
+    <div class="user-details">
+      <h2>{{ user?.name }}</h2>
+      <p>{{ user?.email }}</p>
+    </div>
+  </div>
+
+  <!-- Second Section: Additional Fields (First Name, Last Name, Country, Email) -->
+  <div class="user-fields">
+    <div class="user-field">
+      <label>First Name:</label>
+      <span>{{ user?.given_name }}</span>
+    </div>
+    <div class="user-field">
+      <label>Last Name:</label>
+      <span>{{ user?.family_name }}</span>
+    </div>
+    <div class="user-field">
+      <label>Country:</label>
+      <span>{{ user?.locale || "Sri Lanka" }}</span>
+    </div>
+    <div class="user-field">
+      <label>Email:</label>
+      <span>{{ user?.email }}</span>
+    </div>
+  </div>
+
+  <img src="/profile.avif" alt="Profile Background" class="profile-background" />
+</div>

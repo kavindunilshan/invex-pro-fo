@@ -10,8 +10,16 @@ export class SideBarComponent {
 
   selectedItem: string | null = null;
 
+  scrollToTop(): void {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  }
+
   selectItem(item: string) {
     this.selectedItem = item;
+    this.scrollToTop();
   }
 
 }

@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import {Component, Input, Output, EventEmitter, booleanAttribute} from '@angular/core';
 
 @Component({
   selector: 'app-header-with-button',
@@ -8,7 +8,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 export class HeaderWithButtonComponent {
   @Input() title: string = 'Header Title';
   @Input() buttonText: string = '+';
-  @Input() buttonDisabled: boolean = false;
+  @Input({transform: booleanAttribute}) buttonDisabled: boolean = false;
   @Output() buttonClick = new EventEmitter<void>();
 
   onButtonClick() {

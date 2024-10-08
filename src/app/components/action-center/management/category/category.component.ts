@@ -19,7 +19,9 @@ export class CategoryComponent implements OnInit {
 
   categoryFormConfig = [
     { label: 'Category Name', name: 'name', type: 'text', validators: ['required'] },
-    { label: 'Description', name: 'description', type: 'text', validators: ['required'] }
+    { label: 'Description', name: 'description', type: 'text', validators: ['required'] },
+    { label: 'Created At', name: 'created_at', type: 'date', validators: ['required'] },
+    { label: 'Updated At', name: 'updated_at', type: 'date', validators: ['required'] }
   ];
 
   categoriesData: Array<any> = [];
