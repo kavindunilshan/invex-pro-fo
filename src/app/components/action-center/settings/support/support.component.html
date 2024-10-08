@@ -1,1 +1,19 @@
-<p>support works!</p>
+<div class="support-container">
+  <!-- Header with Title "Support" -->
+  <app-header-with-button title="Support Section" [buttonDisabled]="true"></app-header-with-button>
+
+  <!-- FAQ Section -->
+  <div class="faq-section">
+    <h2>Frequently Asked Questions</h2>
+    <div *ngFor="let faq of faqs; let i = index" class="faq-item">
+      <h3 (click)="toggleFAQ(i)">
+        {{i + 1}}). {{ faq.question }}
+        <span class="toggle-icon">{{ isAnswerVisible(i) ? '▲' : '▼' }}</span>
+      </h3>
+      <p *ngIf="isAnswerVisible(i)">{{ faq.answer }}</p>
+    </div>
+  </div>
+
+  <!-- Background Image in Bottom Right -->
+  <img src="/faq.avif" alt="FAQ Background" class="faq-background" />
+</div>
