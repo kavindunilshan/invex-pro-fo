@@ -19,6 +19,10 @@ export class NavbarComponent implements OnInit {
     });
 
     this.user$ = this.auth.user$;
+
+    this.auth.user$.subscribe(token => {
+      console.log('Id Token:', token);
+    });
   }
 
 }

@@ -1,8 +1,8 @@
 .home-container {
   height: 100vh;
-  background-image: url('../../../../public/bgb.jpg');
+  background-image: url('../../../../public/bga.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 115%;
+  background-size: 90%;
 }
