@@ -23,7 +23,7 @@
 
       <div class="form-group">
         <label for="totalAmount">Total Amount</label>
-        <input id="totalAmount" formControlName="totalAmount" type="number" class="form-control" placeholder="Enter total amount">
+        <input id="totalAmount" formControlName="totalAmount" type="number" class="form-control" [value]="orderTotal" placeholder="Enter total amount">
       </div>
 
       <div class="form-group">
@@ -33,7 +33,7 @@
 
       <div class="button-container">
         <button type="button" class="btn-add-item" (click)="addOrderItem()">Add Order Item</button>
-        <button type="submit" class="btn-submit">Add Order</button>
+        <button type="submit" class="btn-submit">Submit Order</button>
       </div>
     </form>
   </div>

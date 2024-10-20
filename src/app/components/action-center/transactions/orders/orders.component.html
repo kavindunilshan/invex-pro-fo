@@ -1,7 +1,9 @@
 <div class="orders action-center-item">
   <app-header-with-button
     title="Orders Management"
-    buttonText="+ Add Order"
+    [buttonText]="isOrderFormOpen ? 'Close Form' : '+ Add Order'"
+    (buttonClick)="toggleOrderForm()"
+    [isWarning]="isOrderFormOpen"
   />
   <div class="action-chart-content">
     <div>
@@ -11,7 +13,7 @@
 
   <div class="order-form-content">
     <div>
-      <app-order-form/>
+      <app-order-form *ngIf="isOrderFormOpen"/>
     </div>
   </div>
 </div>

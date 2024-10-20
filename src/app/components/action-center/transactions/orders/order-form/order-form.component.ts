@@ -11,6 +11,7 @@ import {Overlay} from "@angular/cdk/overlay";
 })
 export class OrderFormComponent {
 
+  orderTotal: number = 0;
   @Output() orderSubmitted = new EventEmitter<any>(); // Output event for order submission
 
   orderForm: FormGroup;
@@ -18,8 +19,6 @@ export class OrderFormComponent {
     { label: 'Product ID', name: 'product_id', type: 'text', validators: ['required'] },
     { label: 'Quantity', name: 'quantity', type: 'number', validators: ['required', 'min:1'] },
     { label: 'Price', name: 'price', type: 'number', validators: ['required', 'min:0'] },
-    { label: 'Created At', name: 'created_at', type: 'date', validators: ['required'] },
-    { label: 'Updated At', name: 'updated_at', type: 'date', validators: ['required'] }
   ];
 
   addedOrderItems: any[] = []; // Array to hold added order items
@@ -32,7 +31,7 @@ export class OrderFormComponent {
       orderDate: ['', Validators.required],
       shippingDate: ['', Validators.required],
       shippingAddress: ['', Validators.required],
-      totalAmount: ['', [Validators.required, Validators.min(1)]],
+      totalAmount: [this.orderTotal, [Validators.required, Validators.min(1)]],
       orderStatus: ['', Validators.required],
     });
   }
@@ -60,6 +59,8 @@ export class OrderFormComponent {
 
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
+        result.totalPrice = result.quantity * result.price;
+        this.orderTotal += result.totalPrice;
         this.addedOrderItems.push(result);
       }
     });
