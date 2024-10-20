@@ -37,3 +37,16 @@
   transform: translateY(1px);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
+
+.red-button {
+  background-color: #ff0000;
+}
+
+.red-button:hover {
+  background-color: #e40202;
+}
+
+.red-button:focus,
+.red-button:active {
+  transform: translateY(1px);
+}

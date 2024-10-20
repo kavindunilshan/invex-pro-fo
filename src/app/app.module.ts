@@ -53,6 +53,7 @@ import {DashboardComponent} from "./components/action-center/menu/dashboard/dash
 import {
   DashboardHeadComponent
 } from "./components/action-center/menu/dashboard/dashboard-head/dashboard-head.component";
+import { OrderFormComponent } from './components/action-center/transactions/orders/order-form/order-form.component';
 
 @NgModule({
   declarations: [
@@ -88,6 +89,7 @@ import {
     UserComponent,
     PreferenceComponent,
     SupportComponent,
+    OrderFormComponent,
   ],
     imports: [
         MatIconModule,

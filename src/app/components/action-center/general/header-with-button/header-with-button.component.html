@@ -1,6 +1,6 @@
 <div class="header-with-button">
   <h1 class="page-title">{{ title }}</h1>
-  <button class="action-button"
+  <button [class]="isWarning ? 'action-button red-button' : 'action-button'"
           *ngIf="!buttonDisabled"
           (click)="onButtonClick()">
     {{ buttonText }}
