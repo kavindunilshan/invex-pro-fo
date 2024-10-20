@@ -13,7 +13,7 @@
 
   <div class="order-form-content">
     <div>
-      <app-order-form *ngIf="isOrderFormOpen"/>
+      <app-order-form *ngIf="isOrderFormOpen" (orderSubmitted)="toggleOrderForm()"/>
     </div>
   </div>
 </div>

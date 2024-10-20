@@ -29,6 +29,7 @@ export class OrdersComponent implements OnInit {
 
   toggleOrderForm() {
     this.isOrderFormOpen = !this.isOrderFormOpen;
+    console.log('Order Form Toggled')
   }
 
 }

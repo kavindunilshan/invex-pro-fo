@@ -3,6 +3,7 @@ import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {MatDialog} from "@angular/material/dialog";
 import {DynamicFormDialogComponent} from "../../../general/dynamic-form-dialog/dynamic-form-dialog.component";
 import {Overlay} from "@angular/cdk/overlay";
+import {InventoryService} from "../../../../../services/inventory.service";
 
 @Component({
   selector: 'app-order-form',
@@ -11,9 +12,9 @@ import {Overlay} from "@angular/cdk/overlay";
 })
 export class OrderFormComponent {
 
-  orderTotal: number = 0;
-  @Output() orderSubmitted = new EventEmitter<any>(); // Output event for order submission
+  @Output() orderSubmitted = new EventEmitter<void>();
 
+  orderTotal: number = 0;
   orderForm: FormGroup;
   orderItemConfig = [
     { label: 'Product ID', name: 'product_id', type: 'text', validators: ['required'] },
@@ -24,6 +25,7 @@ export class OrderFormComponent {
   addedOrderItems: any[] = []; // Array to hold added order items
 
   constructor(private fb: FormBuilder,
+              private inventoryService: InventoryService,
               private dialog: MatDialog,
               private overlay: Overlay,) {
     this.orderForm = this.fb.group({
@@ -31,7 +33,7 @@ export class OrderFormComponent {
       orderDate: ['', Validators.required],
       shippingDate: ['', Validators.required],
       shippingAddress: ['', Validators.required],
-      totalAmount: [this.orderTotal, [Validators.required, Validators.min(1)]],
+      totalAmount: [this.orderTotal, [Validators.required, Validators.min(0)]],
       orderStatus: ['', Validators.required],
     });
   }
@@ -39,7 +41,9 @@ export class OrderFormComponent {
   submitOrder() {
     if (this.orderForm.valid) {
       const orderData = { ...this.orderForm.value, orderItems: this.addedOrderItems };
-      this.orderSubmitted.emit(orderData);
+      this.inventoryService.createRecord('orders', orderData);
+      console.log('Order Submitted')
+      this.orderSubmitted.emit();
       this.orderForm.reset();
       this.addedOrderItems = [];
     }
