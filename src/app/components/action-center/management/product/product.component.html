@@ -4,4 +4,13 @@
     buttonText="+ Add Product"
     (buttonClick)="openProductForm()"
   />
+
+  <div class="action-chart-content">
+    <div>
+      <app-table
+        [columns]="productColumns"
+        [data]="productData"
+      />
+    </div>
+  </div>
 </div>

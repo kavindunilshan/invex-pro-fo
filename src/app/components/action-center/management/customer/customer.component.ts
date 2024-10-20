@@ -37,7 +37,6 @@ export class CustomerComponent implements OnInit {
   }));
 
   ngOnInit(): void {
-    // Fetch customers data from the backend
     this.inventoryService.getRecords('customers').then(response => {
       this.customersData = response.data;
       console.log('Customers working:', this.customersData);
