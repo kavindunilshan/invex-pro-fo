@@ -1,0 +1,30 @@
+<div class="order-form-container">
+  <div class="form-content">
+    <form [formGroup]="stockForm" (ngSubmit)="submitStock()">
+      <div *ngFor="let field of formConfig | keyvalue" class="form-group">
+        <label [for]="field.key">{{ field.value.name }}</label>
+        <input
+          [id]="field.key"
+          [formControlName]="field.key"
+          [type]="field.value.type"
+          class="form-control"
+          [placeholder]="'Enter ' + field.value.name"
+        />
+      </div>
+
+      <div class="button-container">
+        <button type="button" class="btn-add-item" (click)="openItemForm.emit()">Add Order Item</button>
+        <button type="submit" class="btn-submit">Submit Order</button>
+      </div>
+    </form>
+  </div>
+
+  <div *ngIf="addedItems.length > 0" class="order-items-list">
+    <h3>Added Order Items:</h3>
+    <ul>
+      <li *ngFor="let item of addedItems">
+        Product ID: {{ item.product_id }}, Quantity: {{ item.quantity }}, Price: {{ item.price }}
+      </li>
+    </ul>
+  </div>
+</div>

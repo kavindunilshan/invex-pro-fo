@@ -7,7 +7,7 @@ import {FormBuilder, FormGroup} from "@angular/forms";
   styleUrl: './stock-form.component.css'
 })
 export class StockFormComponent implements OnChanges {
-  @Input() formConfig: any = {};
+  @Input() formConfig: FormConfig = {};
   @Input() addedItems: any[] = [];
   @Output() openItemForm = new EventEmitter<void>();
   @Output() stockItemAdded = new EventEmitter<any>();

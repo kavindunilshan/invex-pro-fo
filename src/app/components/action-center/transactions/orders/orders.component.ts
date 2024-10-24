@@ -34,13 +34,13 @@ export class OrdersComponent implements OnInit {
   ];
 
   orderFormConfig = {
-      customerID: ['', Validators.required],
-      orderDate: ['', Validators.required],
-      shippingDate: ['', Validators.required],
-      shippingAddress: ['', Validators.required],
-      totalAmount: [this.orderTotal, [Validators.required, Validators.min(0)]],
-      orderStatus: ['', Validators.required],
-  }
+    customerID: { value: ['', Validators.required], type: 'text', name: 'Customer ID' },
+    orderDate: { value: ['', Validators.required], type: 'date', name: 'Order Date' },
+    shippingDate: { value: ['', Validators.required], type: 'date', name: 'Shipping Date' },
+    shippingAddress: { value: ['', Validators.required], type: 'text', name: 'Shipping Address' },
+    totalAmount: { value: [this.orderTotal, [Validators.required, Validators.min(0)]], type: 'number', name: 'Total Amount' },
+    orderStatus: { value: ['', Validators.required], type: 'text', name: 'Order Status' },
+  };
 
   ngOnInit() {
     this.inventoryService.getRecords('orders')
