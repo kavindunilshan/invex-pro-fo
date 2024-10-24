@@ -1,6 +1,6 @@
 <div class="order-form-container">
   <div class="form-content">
-    <form [formGroup]="orderForm" (ngSubmit)="submitOrder()">
+    <form [formGroup]="stockForm" (ngSubmit)="submitStock()">
       <div class="form-group">
         <label for="customerID">Customer ID</label>
         <input id="customerID" formControlName="customerID" type="text" class="form-control" placeholder="Enter customer ID">
@@ -38,10 +38,10 @@
     </form>
   </div>
 
-  <div *ngIf="addedOrderItems.length > 0" class="order-items-list">
+  <div *ngIf="addedItems.length > 0" class="order-items-list">
     <h3>Added Order Items:</h3>
     <ul>
-      <li *ngFor="let item of addedOrderItems">
+      <li *ngFor="let item of addedItems">
         Product ID: {{ item.product_id }}, Quantity: {{ item.quantity }}, Price: {{ item.price }}
       </li>
     </ul>

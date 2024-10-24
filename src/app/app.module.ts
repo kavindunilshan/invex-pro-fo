@@ -53,7 +53,7 @@ import {DashboardComponent} from "./components/action-center/menu/dashboard/dash
 import {
   DashboardHeadComponent
 } from "./components/action-center/menu/dashboard/dashboard-head/dashboard-head.component";
-import { OrderFormComponent } from './components/action-center/transactions/orders/order-form/order-form.component';
+import { StockFormComponent } from './components/action-center/transactions/orders/order-form/stock-form.component';
 import { EmployeeComponent } from './components/action-center/management/employee/employee.component';
 
 @NgModule({
@@ -90,7 +90,7 @@ import { EmployeeComponent } from './components/action-center/management/employe
     UserComponent,
     PreferenceComponent,
     SupportComponent,
-    OrderFormComponent,
+    StockFormComponent,
     EmployeeComponent,
   ],
     imports: [
