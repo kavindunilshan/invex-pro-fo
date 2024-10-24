@@ -13,4 +13,8 @@ export class SpecificService {
   getRecordsByField(entityType: string, field: string): Promise<AxiosResponse<any[]>> {
     return axios.get(`${this.apiUrl}/${entityType}/${field}`);
   }
+
+  getCounts(entityType: string): Promise<AxiosResponse<any[]>> {
+    return axios.get(`${this.apiUrl}/${entityType}/count`);
+  }
 }

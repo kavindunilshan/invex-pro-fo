@@ -3,6 +3,7 @@ import { MatDialog } from "@angular/material/dialog";
 import { DynamicFormDialogComponent } from "../../general/dynamic-form-dialog/dynamic-form-dialog.component";
 import {InventoryService} from "../../../../services/inventory.service";
 import {Overlay} from "@angular/cdk/overlay";
+import {SpecificService} from "../../../../services/specific.service";
 
 @Component({
   selector: 'app-supplier',
@@ -14,7 +15,8 @@ export class SupplierComponent implements OnInit {
   constructor(
     private dialog: MatDialog,
     private overlay: Overlay,
-    private inventoryService: InventoryService
+    private inventoryService: InventoryService,
+    private specificService: SpecificService,
   ) {}
 
   supplierFormConfig = [
@@ -38,7 +40,11 @@ export class SupplierComponent implements OnInit {
   ngOnInit(): void {
       this.inventoryService.getRecords('suppliers').then(response => {
           this.suppliersData = response.data;
-      })
+      });
+
+      this.specificService.getCounts('suppliers').then(response => {
+          console.log('Suppliers count:', response.data);
+      });
   }
 
   openSupplierForm() {
