@@ -20,7 +20,10 @@
       />
       <div class="charts">
         <app-chart-container title="Line Chart">
-          <app-line-chart></app-line-chart>
+          <app-line-chart
+            [data]="customersCountData"
+            [labels]="customersCountLabels"
+          ></app-line-chart>
         </app-chart-container>
 
       </div>

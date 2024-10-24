@@ -37,6 +37,10 @@ export class SupplierComponent implements OnInit {
 
   suppliersData: Array<any> = [];
 
+  supplierCountData: Array<number> = [];
+  supplierCountLabels: Array<string> = [];
+  isShowSupplierChart: boolean = false;
+
   ngOnInit(): void {
       this.inventoryService.getRecords('suppliers').then(response => {
           this.suppliersData = response.data;
@@ -44,6 +48,18 @@ export class SupplierComponent implements OnInit {
 
       this.specificService.getCounts('suppliers').then(response => {
           console.log('Suppliers count:', response.data);
+
+          this.supplierCountData = response.data.map((item: any) => item.supplierCount);
+          this.supplierCountLabels = response.data.map((item: any) => item.month + ' ' + item.year);
+
+          console.log('Supplier count values:', this.supplierCountData);
+          console.log('Supplier count labels:', this.supplierCountLabels);
+
+          this.isShowSupplierChart = true;
+
+
+      }).catch(error => {
+          console.error('Error getting suppliers count:', error);
       });
   }
 
