@@ -54,6 +54,7 @@ import {
   DashboardHeadComponent
 } from "./components/action-center/menu/dashboard/dashboard-head/dashboard-head.component";
 import { OrderFormComponent } from './components/action-center/transactions/orders/order-form/order-form.component';
+import { EmployeeComponent } from './components/action-center/management/employee/employee.component';
 
 @NgModule({
   declarations: [
@@ -90,6 +91,7 @@ import { OrderFormComponent } from './components/action-center/transactions/orde
     PreferenceComponent,
     SupportComponent,
     OrderFormComponent,
+    EmployeeComponent,
   ],
     imports: [
         MatIconModule,

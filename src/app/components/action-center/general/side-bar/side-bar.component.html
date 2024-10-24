@@ -76,6 +76,16 @@
           <mat-icon class="item-icon">supervised_user_circle</mat-icon>
           <span class="item-name">Customers</span>
         </li>
+
+        <li
+          class="topic-item"
+          [ngClass]="{ 'selected': selectedItem === 'employees' }"
+          (click)="selectItem('employees')"
+          routerLink="/action-center/employees"
+        >
+          <mat-icon class="item-icon">badge</mat-icon>
+          <span class="item-name">Employees</span>
+        </li>
       </ul>
     </div>
 
