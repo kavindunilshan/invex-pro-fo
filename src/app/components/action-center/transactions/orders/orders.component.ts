@@ -3,6 +3,7 @@ import {DynamicFormDialogComponent} from "../../general/dynamic-form-dialog/dyna
 import {MatDialog} from "@angular/material/dialog";
 import {InventoryService} from "../../../../services/inventory.service";
 import {Overlay} from "@angular/cdk/overlay";
+import {Validators} from "@angular/forms";
 
 @Component({
   selector: 'app-orders',
@@ -15,9 +16,31 @@ export class OrdersComponent implements OnInit {
 
   isOrderFormOpen: boolean = false;
 
+  orderTotal: number = 0;
+  addedOrderItems: any[] = [];
+
+
+
   constructor(
+    private dialog: MatDialog,
+    private overlay: Overlay,
     private inventoryService: InventoryService,
   ) {}
+
+  orderItemConfig = [
+    { label: 'Product ID', name: 'product_id', type: 'text', validators: ['required'] },
+    { label: 'Quantity', name: 'quantity', type: 'number', validators: ['required', 'min:1'] },
+    { label: 'Price', name: 'price', type: 'number', validators: ['required', 'min:0'] },
+  ];
+
+  orderFormConfig = {
+      customerID: ['', Validators.required],
+      orderDate: ['', Validators.required],
+      shippingDate: ['', Validators.required],
+      shippingAddress: ['', Validators.required],
+      totalAmount: [this.orderTotal, [Validators.required, Validators.min(0)]],
+      orderStatus: ['', Validators.required],
+  }
 
   ngOnInit() {
     this.inventoryService.getRecords('orders')
@@ -30,6 +53,35 @@ export class OrdersComponent implements OnInit {
   toggleOrderForm() {
     this.isOrderFormOpen = !this.isOrderFormOpen;
     console.log('Order Form Toggled')
+  }
+
+  addOrderItem() {
+    const dialogRef = this.dialog.open(DynamicFormDialogComponent, {
+      width: '600px',
+      height: 'auto',
+      data: {
+        formConfig: this.orderItemConfig,
+        title: 'Add New Order Item'
+      },
+      panelClass: 'custom-dialog-container',
+      scrollStrategy: this.overlay.scrollStrategies.close()
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        result.totalPrice = result.quantity * result.price;
+        this.orderTotal += result.totalPrice;
+        this.addedOrderItems.push(result);
+      }
+    });
+  }
+
+  handleOrderSubmit(order: any) {
+    const orderData = { ...order, orderItems: this.addedOrderItems };
+    this.inventoryService.createRecord('orders', orderData);
+    this.addedOrderItems = [];
+    this.orderTotal = 0;
+    this.toggleOrderForm();
   }
 
 }

@@ -13,7 +13,12 @@
 
   <div class="order-form-content">
     <div>
-      <app-order-form *ngIf="isOrderFormOpen" (orderSubmitted)="toggleOrderForm()"/>
+      <app-order-form *ngIf="isOrderFormOpen"
+                      [addedOrderItems]="addedOrderItems"
+                      [formConfig]="orderFormConfig"
+                      (openItemForm)="addOrderItem()"
+                      (orderSubmitted)="handleOrderSubmit($event)"
+      />
     </div>
   </div>
 </div>
