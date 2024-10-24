@@ -1,14 +1,13 @@
 <div class="order-form-container">
   <div class="form-content">
     <form [formGroup]="stockForm" (ngSubmit)="submitStock()">
-      <div *ngFor="let field of formConfig | keyvalue" class="form-group">
-        <label [for]="field.key">{{ field.value.name }}</label>
+      <div *ngFor="let field of formConfig" class="form-group">
+        <label [for]="field.key">{{ field.name }}</label>
         <input
           [id]="field.key"
-          [formControlName]="field.key"
-          [type]="field.value.type"
+          [type]="field.type"
           class="form-control"
-          [placeholder]="'Enter ' + field.value.name"
+          [placeholder]="'Enter ' + field.name"
         />
       </div>
 

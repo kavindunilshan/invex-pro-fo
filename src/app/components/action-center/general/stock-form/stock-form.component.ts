@@ -1,5 +1,6 @@
 import {Component, EventEmitter, Input, OnChanges, Output} from '@angular/core';
 import {FormBuilder, FormGroup} from "@angular/forms";
+import {FormFieldConfig} from "../../../../types/invex-pro-types";
 
 @Component({
   selector: 'app-stock-form',
@@ -7,7 +8,7 @@ import {FormBuilder, FormGroup} from "@angular/forms";
   styleUrl: './stock-form.component.css'
 })
 export class StockFormComponent implements OnChanges {
-  @Input() formConfig: FormConfig = {};
+  @Input() formConfig: FormFieldConfig[] = [];
   @Input() addedItems: any[] = [];
   @Output() openItemForm = new EventEmitter<void>();
   @Output() stockItemAdded = new EventEmitter<any>();

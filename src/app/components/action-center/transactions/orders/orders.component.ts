@@ -4,6 +4,7 @@ import {MatDialog} from "@angular/material/dialog";
 import {InventoryService} from "../../../../services/inventory.service";
 import {Overlay} from "@angular/cdk/overlay";
 import {Validators} from "@angular/forms";
+import {FormFieldConfig} from "../../../../types/invex-pro-types";
 
 @Component({
   selector: 'app-orders',
@@ -33,14 +34,14 @@ export class OrdersComponent implements OnInit {
     { label: 'Price', name: 'price', type: 'number', validators: ['required', 'min:0'] },
   ];
 
-  orderFormConfig = {
-    customerID: { value: ['', Validators.required], type: 'text', name: 'Customer ID' },
-    orderDate: { value: ['', Validators.required], type: 'date', name: 'Order Date' },
-    shippingDate: { value: ['', Validators.required], type: 'date', name: 'Shipping Date' },
-    shippingAddress: { value: ['', Validators.required], type: 'text', name: 'Shipping Address' },
-    totalAmount: { value: [this.orderTotal, [Validators.required, Validators.min(0)]], type: 'number', name: 'Total Amount' },
-    orderStatus: { value: ['', Validators.required], type: 'text', name: 'Order Status' },
-  };
+  orderFormConfig: FormFieldConfig[] = [
+    { key: 'customerID', value: ['', Validators.required], type: 'text', name: 'Customer ID' },
+    { key: 'orderDate', value: ['', Validators.required], type: 'date', name: 'Order Date' },
+    { key: 'shippingDate', value: ['', Validators.required], type: 'date', name: 'Shipping Date' },
+    { key: 'shippingAddress', value: ['', Validators.required], type: 'text', name: 'Shipping Address' },
+    { key: 'totalAmount', value: [this.orderTotal, [Validators.required, Validators.min(0)]], type: 'number', name: 'Total Amount' },
+    { key: 'orderStatus', value: ['', Validators.required], type: 'text', name: 'Order Status' },
+  ];
 
   ngOnInit() {
     this.inventoryService.getRecords('orders')
