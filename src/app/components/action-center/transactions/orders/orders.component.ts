@@ -1,4 +1,4 @@
-import {Component, OnInit, ViewContainerRef} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {DynamicFormDialogComponent} from "../../general/dynamic-form-dialog/dynamic-form-dialog.component";
 import {MatDialog} from "@angular/material/dialog";
 import {InventoryService} from "../../../../services/inventory.service";
