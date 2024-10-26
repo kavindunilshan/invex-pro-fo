@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, Input, OnChanges} from '@angular/core';
 import { Chart, ChartData, LineController, LineElement, PointElement, CategoryScale, LinearScale, Legend, Title, Tooltip } from 'chart.js';
 
 Chart.register(LineController, LineElement, PointElement, CategoryScale, LinearScale, Tooltip, Legend, Title);
@@ -8,7 +8,10 @@ Chart.register(LineController, LineElement, PointElement, CategoryScale, LinearS
   templateUrl: './line-chart.component.html',
   styleUrl: './line-chart.component.css'
 })
-export class LineChartComponent {
+export class LineChartComponent implements OnChanges {
+  @Input() labels: string[] = [];
+  @Input() data: number[] = [];
+
   public lineChartOptions: any = {
     responsive: true,
     scales: {
@@ -18,15 +21,29 @@ export class LineChartComponent {
   };
 
   public lineChartData: ChartData<'line', number[], string> = {
-    labels: ['Label 1', 'Label 2', 'Label 3'],
+    labels: [],
     datasets: [{
-      label: 'Dataset 1',
-      data: [30, 50, 70],
+      label: '',
+      data: [],
       backgroundColor: 'rgba(75, 192, 192, 0.2)',
       borderColor: 'rgba(75, 192, 192, 1)',
       borderWidth: 2,
       fill: true
     }]
   };
+
+  ngOnChanges(): void {
+    this.lineChartData = {
+      labels: this.labels,
+      datasets: [{
+        label: '',
+        data: this.data,
+        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+        borderColor: 'rgba(75, 192, 192, 1)',
+        borderWidth: 2,
+        fill: true
+      }]
+    };
+  }
 
 }

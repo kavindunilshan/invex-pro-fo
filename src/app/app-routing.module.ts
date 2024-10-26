@@ -15,6 +15,7 @@ import {UserComponent} from "./components/action-center/settings/user/user.compo
 import {PreferenceComponent} from "./components/action-center/settings/preference/preference.component";
 import {SupportComponent} from "./components/action-center/settings/support/support.component";
 import {DashboardComponent} from "./components/action-center/menu/dashboard/dashboard.component";
+import {EmployeeComponent} from "./components/action-center/management/employee/employee.component";
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -27,7 +28,8 @@ const routes: Routes = [
       { path: 'products', component: ProductComponent },
       { path: 'categories', component: CategoryComponent },
       { path: 'customers', component: CustomerComponent },
-      { path: 'suppliers', component: SupplierComponent},
+      { path: 'suppliers', component: SupplierComponent },
+      { path: 'employees', component: EmployeeComponent },
 
       { path: 'orders', component: OrdersComponent },
       { path: 'purchases', component: PurchaseComponent },
@@ -35,8 +37,8 @@ const routes: Routes = [
       { path: 'shipments', component: ShipmentsComponent },
 
       { path: 'users', component: UserComponent},
-      { path: 'preferences', component: PreferenceComponent},
-      { path: 'support', component: SupportComponent}
+      { path: 'preferences', component: PreferenceComponent },
+      { path: 'support', component: SupportComponent }
 
     ]
   }

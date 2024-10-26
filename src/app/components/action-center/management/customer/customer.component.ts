@@ -3,6 +3,7 @@ import { MatDialog } from "@angular/material/dialog";
 import { DynamicFormDialogComponent } from "../../general/dynamic-form-dialog/dynamic-form-dialog.component";
 import {InventoryService} from "../../../../services/inventory.service";
 import {Overlay} from "@angular/cdk/overlay";
+import {SpecificService} from "../../../../services/specific.service";
 
 @Component({
   selector: 'app-customer',
@@ -14,7 +15,8 @@ export class CustomerComponent implements OnInit {
   constructor(
     private dialog: MatDialog,
     private overlay: Overlay,
-    private inventoryService: InventoryService
+    private inventoryService: InventoryService,
+    private specificService: SpecificService,
   ) {}
 
   customerFormConfig = [
@@ -30,6 +32,8 @@ export class CustomerComponent implements OnInit {
   ];
 
   customersData: Array<any> = [];
+  customersCountData: Array<number> = [];
+  customersCountLabels: Array<string> = [];
 
   customersColumns = this.customerFormConfig.map(field => ({
     key: field.name,
@@ -40,6 +44,11 @@ export class CustomerComponent implements OnInit {
     this.inventoryService.getRecords('customers').then(response => {
       this.customersData = response.data;
       console.log('Customers working:', this.customersData);
+    });
+
+    this.specificService.getCounts('customers').then(response => {
+      this.customersCountData = response.data.map((item: any) => item.customerCount);
+      this.customersCountLabels = response.data.map((item: any) => item.month + ' ' + item.year);
     });
   }
 

@@ -1,13 +1,24 @@
 <div class="purchases action-center-item">
   <app-header-with-button
     title="Purchases Management"
-    buttonText="+ Add Purchase"
+    [buttonText]="isPurchaseFormOpen ? 'Close Form' : '+ Add Purchase'"
+    (buttonClick)="togglePurchaseForm()"
+    [isWarning]="isPurchaseFormOpen"
   />
-
-  <div class="content">
+  <div class="action-chart-content">
     <div>
-      <app-table
-      />
+      <app-table />
+    </div>
+
+    <div class="purchase-form-content">
+      <div>
+        <app-stock-form *ngIf="isPurchaseFormOpen"
+                        [addedItems]="addedPurchaseItems"
+                        [formConfig]="purchaseFormConfig"
+                        (openItemForm)="addPurchaseItem()"
+                        (stockSubmitted)="handlePurchaseSubmit($event)"
+        />
+      </div>
     </div>
   </div>
 </div>

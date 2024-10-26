@@ -1,0 +1,31 @@
+<div class="employee action-center-item">
+  <app-header-with-button
+    title="Employee Management"
+    buttonText="+ Add Employee"
+    (buttonClick)="openEmployeeForm()"
+  />
+
+  <div class="action-chart-content">
+    <div>
+      <app-table
+        [columns]="employeeColumns"
+        [data]="employeesData"
+      ></app-table>
+    </div>
+  </div>
+
+  <div class="employee">
+    <app-sub-topic
+      title="Employee Growth"
+      subtitle="The growth of employees over time."
+    ></app-sub-topic>
+    <div class="charts">
+      <app-chart-container title="Employee Growth Chart">
+        <app-bar-chart
+          [data]="employeeCountData"
+          [labels]="employeeCountLabels"
+        ></app-bar-chart>
+      </app-chart-container>
+    </div>
+  </div>
+</div>

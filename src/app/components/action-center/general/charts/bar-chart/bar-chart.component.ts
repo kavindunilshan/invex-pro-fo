@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, Input, OnChanges} from '@angular/core';
 import {
   BarController,
   BarElement,
@@ -18,23 +18,43 @@ Chart.register(BarController, BarElement, CategoryScale, LinearScale, Tooltip, L
   templateUrl: './bar-chart.component.html',
   styleUrl: './bar-chart.component.css'
 })
-export class BarChartComponent {
+export class BarChartComponent implements OnChanges {
+  @Input() labels: string[] = [];
+  @Input() data: number[] = [];
+
   public barChartOptions: any = {
     responsive: true,
     scales: {
       x: { beginAtZero: true },
       y: { beginAtZero: true }
+    },
+    plugins: {
+      legend: {
+        display: false
+      }
     }
   };
 
   public barChartData: ChartData<'bar', number[], string> = {
-    labels: ['Label 1', 'Label 2', 'Label 3'],
+    labels: [],
     datasets: [{
-      label: 'Dataset 1',
-      data: [30, 50, 70],
-      backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56'],
-      hoverBackgroundColor: ['#FF6384', '#36A2EB', '#FFCE56']
+      label: '',
+      data: [],
+      backgroundColor: ['#36A2EB'],
+      hoverBackgroundColor: ['#36A2EB']
     }]
   };
+
+  ngOnChanges(): void {
+    this.barChartData = {
+      labels: this.labels,
+      datasets: [{
+        label: '',
+        data: this.data,
+        backgroundColor: ['#36A2EB'],
+        hoverBackgroundColor: ['#36A2EB']
+      }]
+    };
+  }
 
 }
