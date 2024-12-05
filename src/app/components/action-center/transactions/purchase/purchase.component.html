@@ -6,10 +6,6 @@
     [isWarning]="isPurchaseFormOpen"
   />
   <div class="action-chart-content">
-    <div>
-      <app-table />
-    </div>
-
     <div class="purchase-form-content">
       <div>
         <app-stock-form *ngIf="isPurchaseFormOpen"
@@ -19,6 +15,10 @@
                         (stockSubmitted)="handlePurchaseSubmit($event)"
         />
       </div>
+    </div>
+
+    <div>
+      <app-table />
     </div>
   </div>
 </div>

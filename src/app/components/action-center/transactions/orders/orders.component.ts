@@ -15,7 +15,7 @@ export class OrdersComponent implements OnInit {
   customers: any[] = [];
   customerNames: any[] = [];
 
-  isOrderFormOpen: boolean = false;
+  isOrderFormOpen: boolean = true;
 
   orderTotal: number = 0;
   addedOrderItems: any[] = [];
@@ -78,8 +78,17 @@ export class OrdersComponent implements OnInit {
   }
 
   handleOrderSubmit(order: any) {
-    const orderData = { ...order, orderItems: this.addedOrderItems };
-    this.inventoryService.createRecord('orders', orderData);
+    this.inventoryService.createManyRecords('order_items', this.addedOrderItems)
+      .then(data => {
+
+        const orderData = { ...order, orderItems: data };
+        this.inventoryService.createRecord('orders', orderData)
+          .then(response => {
+              console.log('Order created successfully');
+        });
+
+      })
+
     this.addedOrderItems = [];
     this.orderTotal = 0;
     this.toggleOrderForm();
