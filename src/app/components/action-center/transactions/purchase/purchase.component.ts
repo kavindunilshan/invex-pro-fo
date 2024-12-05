@@ -15,7 +15,7 @@ export class PurchaseComponent implements OnInit {
   suppliers: any[] = [];
   supplierNames: any[] = [];
 
-  isPurchaseFormOpen: boolean = false;
+  isPurchaseFormOpen: boolean = true;
 
   purchaseTotal: number = 0;
   addedPurchaseItems: any[] = [];
@@ -75,8 +75,17 @@ export class PurchaseComponent implements OnInit {
   }
 
   handlePurchaseSubmit(purchase: any) {
-    const purchaseData = { ...purchase, purchaseItems: this.addedPurchaseItems };
-    this.inventoryService.createRecord('purchases', purchaseData);
+    this.inventoryService.createManyRecords('purchase_items', this.addedPurchaseItems)
+      .then(data => {
+        console.log('Purchase Items Created', data);
+
+        const purchaseData = { ...purchase, purchaseItems: data};
+        this.inventoryService.createRecord('purchases', purchaseData)
+          .then(r => {
+            console.log('Purchase Created', r);
+          });
+      });
+
     this.addedPurchaseItems = [];
     this.purchaseTotal = 0;
     this.togglePurchaseForm();

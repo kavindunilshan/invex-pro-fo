@@ -14,6 +14,10 @@ export class InventoryService {
     return axios.post(`${this.apiUrl}/${entityType}`, data);
   }
 
+  createManyRecords(entityType: string, data: any[]): Promise<AxiosResponse<any>> {
+    return axios.post(`${this.apiUrl}/${entityType}/many`, data);
+  }
+
   getRecords(entityType: string): Promise<AxiosResponse<any[]>> {
     return axios.get(`${this.apiUrl}/${entityType}`);
   }
