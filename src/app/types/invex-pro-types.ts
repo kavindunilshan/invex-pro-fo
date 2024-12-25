@@ -5,5 +5,6 @@ export interface FormFieldConfig {
   value: any;
   name: string;
   type: string;
+  options?: { label: string; value: any }[];
   validators?: ValidatorFn[];
 }

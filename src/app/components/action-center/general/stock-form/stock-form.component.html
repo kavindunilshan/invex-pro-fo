@@ -3,13 +3,26 @@
     <form [formGroup]="stockForm" (ngSubmit)="submitStock()">
       <div *ngFor="let field of formConfig" class="form-group">
         <label [for]="field.key">{{ field.name }}</label>
+
         <input
+          *ngIf="field.type !== 'select'"
           [id]="field.key"
           [type]="field.type"
           class="form-control"
           [formControlName]="field.key"
           [placeholder]="'Enter ' + field.name"
         />
+
+        <select
+          *ngIf="field.type === 'select'"
+          [id]="field.key"
+          class="form-control"
+          [formControlName]="field.key"
+        >
+          <option *ngFor="let option of field.options" [value]="option.value">
+            {{ option.label }}
+          </option>
+        </select>
       </div>
 
       <div class="button-container">

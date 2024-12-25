@@ -26,6 +26,27 @@ export class PurchaseComponent implements OnInit {
     private inventoryService: InventoryService,
   ) {}
 
+  ngOnInit() {
+    this.inventoryService.getRecords('suppliers')
+      .then(response => {
+        this.supplierNames = response.data.map(supplier => ({label:supplier.supplierName, value: supplier._id}));
+        console.log('Supplier Names', this.supplierNames);
+        console.log('Suppliers', response.data);
+        this.updatePurchaseFormConfig();
+        this.suppliers = response.data;
+      });
+  }
+
+  private updatePurchaseFormConfig() {
+    this.purchaseFormConfig = [
+      { key: 'supplier', value: ['', Validators.required], type: 'select', name: 'Supplier ID', options: this.supplierNames },
+      { key: 'purchaseDate', value: ['', Validators.required], type: 'date', name: 'Purchase Date' },
+      { key: 'expectedArrivalDate', value: ['', Validators.required], type: 'date', name: 'Expected Arrival Date' },
+      { key: 'totalCost', value: [this.purchaseTotal, [Validators.required, Validators.min(0)]], type: 'number', name: 'Total Cost' },
+      { key: 'status', value: ['', Validators.required], type: 'text', name: 'Status' },
+    ];
+  }
+
   purchaseItemConfig = [
     { label: 'Product ID', name: 'product_id', type: 'text', validators: ['required'] },
     { label: 'Quantity', name: 'quantity', type: 'number', validators: ['required', 'min:1'] },
@@ -33,20 +54,12 @@ export class PurchaseComponent implements OnInit {
   ];
 
   purchaseFormConfig: FormFieldConfig[] = [
-    { key: 'supplier', value: ['', Validators.required], type: 'text', name: 'Supplier ID' },
+    { key: 'supplier', value: ['', Validators.required], type: 'select', name: 'Supplier ID', options: this.supplierNames },
     { key: 'purchaseDate', value: ['', Validators.required], type: 'date', name: 'Purchase Date' },
     { key: 'expectedArrivalDate', value: ['', Validators.required], type: 'date', name: 'Expected Arrival Date' },
     { key: 'totalCost', value: [this.purchaseTotal, [Validators.required, Validators.min(0)]], type: 'number', name: 'Total Cost' },
     { key: 'status', value: ['', Validators.required], type: 'text', name: 'Status' },
   ];
-
-  ngOnInit() {
-    this.inventoryService.getRecords('suppliers')
-      .then(response => {
-        this.supplierNames = response.data.map(supplier => supplier.supplierName);
-        this.suppliers = response.data;
-      });
-  }
 
   togglePurchaseForm() {
     this.isPurchaseFormOpen = !this.isPurchaseFormOpen;
@@ -75,14 +88,13 @@ export class PurchaseComponent implements OnInit {
   }
 
   handlePurchaseSubmit(purchase: any) {
-    this.inventoryService.createManyRecords('purchase_items', this.addedPurchaseItems)
+    this.inventoryService.createManyRecords('purchase_items', this.addedPurchaseItems || [])
       .then(data => {
-        console.log('Purchase Items Created', data);
 
+        console.log("Here", purchase);
         const purchaseData = { ...purchase, purchaseItems: data};
         this.inventoryService.createRecord('purchases', purchaseData)
           .then(r => {
-            console.log('Purchase Created', r);
           });
       });
 
